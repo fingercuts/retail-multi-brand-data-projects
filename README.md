@@ -37,7 +37,7 @@ data/
     raw/            - Raw CSV extracts (8 source files)
     staging/        - Cleaned Parquet files after ingestion
     marts/          - Analytics-ready tables (fact + dims from dbt)
-
+    
 notebooks/          - Colab notebooks (ingestion, EDA, analysis)
 dbt_project/        - dbt models (staging, intermediate, marts)
 airflow/            - Orchestration DAGs
