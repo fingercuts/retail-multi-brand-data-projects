@@ -1,8 +1,12 @@
 # 🛒 Retail Multi-Brand Data Project
 
-> End-to-end data analytics & engineering portfolio project using synthetic multi-brand retail data.  
-> Built with **Google Colab, PySpark, dbt, DuckDB, Airflow, and Power BI**.  
-> Demonstrates data engineering, analytics engineering, business intelligence, and storytelling.
+> “This project simulates the analytics challenges of a multi-brand retail holding company.  
+> From raw transactional extracts, I built an end-to-end data pipeline → (ingestion → transformation → orchestration → BI dashboard) to generate insights for business stakeholders.”
+
+**Project Highlights**
+- Built full pipeline: raw data → DuckDB/dbt marts → BI dashboards.
+- Tools: Google Colab, PySpark, DuckDB, dbt, Airflow, Power BI.
+- Focus: Data engineering, analytics engineering, business intelligence, and storytelling.
 
 ---
 
