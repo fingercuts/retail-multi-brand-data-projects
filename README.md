@@ -50,6 +50,11 @@ docs/               # Schema diagrams, lineage screenshots
 
 ---
 
+🔄 Data Pipeline Architecture
+<pre> Raw CSV extracts ↓ [Ingestion Layer] -> PySpark + DuckDB (staging tables, Parquet export) ↓ [Transformation] -> dbt + DuckDB (star schema: Fact + Dimensions, lineage docs) ↓ [Orchestration] -> Airflow DAGs (simulate daily/weekly refresh) ↓ [Analytics Layer] -> Power BI dashboards (KPIs, trends, promos, store insights) ↓ [Business Output] -> Insights deck for executives </pre>
+
+---
+
 ## 🛠️ Roadmap
 
 1. **Ingestion** (CSV → DuckDB + Parquet)  
