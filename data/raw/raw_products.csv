@@ -1,0 +1,646 @@
+product_id,product_name,brand_id,category,price
+PROD-00001,Americano,BRND-001,Food & Beverage,38000.0
+PROD-00002,Latte,BRND-001,Food & Beverage,50000.0
+PROD-00003,Cappuccino,BRND-001,Food & Beverage,46000.0
+PROD-00004,Frappuccino,BRND-001,Food & Beverage,65000.0
+PROD-00005,Cold Brew,BRND-001,Food & Beverage,47000.0
+PROD-00006,Tea Latte,BRND-001,Food & Beverage,
+PROD-00007,Caramel Macchiato,BRND-001,Food & Beverage,52000.0
+PROD-00008,Muffin,BRND-001,Food & Beverage,29000.0
+PROD-00009,Croissant,BRND-001,Food & Beverage,26000.0
+PROD-00010,Sandwich,BRND-001,Food & Beverage,47000.0
+PROD-00011,Whopper,BRND-002,Food & Beverage,
+PROD-00012,Cheeseburger,BRND-002,Food & Beverage,39000.0
+PROD-00013,Chicken Burger,BRND-002,Food & Beverage,40000.0
+PROD-00014,Double Whopper,BRND-002,Food & Beverage,78000.0
+PROD-00015,Fries (S/M/L),BRND-002,Food & Beverage,20000.0
+PROD-00016,Onion Rings,BRND-002,Food & Beverage,22000.0
+PROD-00017,Sundae,BRND-002,Food & Beverage,18000.0
+PROD-00018,Coke/Soft Drink,BRND-002,Food & Beverage,19000.0
+PROD-00019,Signature Ice Cream Cup,BRND-003,Food & Beverage,63000.0
+PROD-00020,Waffle Bowl Sundae,BRND-003,Food & Beverage,70000.0
+PROD-00021,Ice Cream Cake Slice,BRND-003,Food & Beverage,51000.0
+PROD-00022,Milkshake,BRND-003,Food & Beverage,43000.0
+PROD-00023,Ice Cream Pint,BRND-003,Food & Beverage,109000.0
+PROD-00024,Toppings,BRND-003,Food & Beverage,11000.0
+PROD-00025,Personal Pizza,BRND-004,Food & Beverage,58000.0
+PROD-00026,Medium Pizza,BRND-004,Food & Beverage,107000.0
+PROD-00027,Large Pizza,BRND-004,Food & Beverage,134000.0
+PROD-00028,Cheesy Bread,BRND-004,Food & Beverage,44000.0
+PROD-00029,Chicken Wings,BRND-004,Food & Beverage,52000.0
+PROD-00030,Lava Cake,BRND-004,Food & Beverage,36000.0
+PROD-00031,Soft Drink,BRND-004,Food & Beverage,17000.0
+PROD-00032,Classic Pizza,BRND-005,Food & Beverage,120000.0
+PROD-00033,Gourmet Pizza,BRND-005,Food & Beverage,175000.0
+PROD-00034,Pasta (Spaghetti/Lasagna),BRND-005,Food & Beverage,88000.0
+PROD-00035,Salad,BRND-005,Food & Beverage,85000.0
+PROD-00036,Garlic Bread,BRND-005,Food & Beverage,41000.0
+PROD-00037,Dessert Pizza,BRND-005,Food & Beverage,63000.0
+PROD-00038,Chocolate Truffles (per box),BRND-006,Food & Beverage,569000.0
+PROD-00039,Chocolate Bar,BRND-006,Food & Beverage,121000.0
+PROD-00040,Hot Chocolate,BRND-006,Food & Beverage,100000.0
+PROD-00041,Chocolate-dipped Strawberries,BRND-006,Food & Beverage,161000.0
+PROD-00042,Gift Box (Luxury),BRND-006,Food & Beverage,983000.0
+PROD-00043,Ice Cream Soft Serve,BRND-006,Food & Beverage,122000.0
+PROD-00044,Croissant,BRND-007,Food & Beverage,37000.0
+PROD-00045,Baguette,BRND-007,Food & Beverage,31000.0
+PROD-00046,Sandwich,BRND-007,Food & Beverage,
+PROD-00047,Éclair,BRND-007,Food & Beverage,36000.0
+PROD-00048,Quiche,BRND-007,Food & Beverage,59000.0
+PROD-00049,Coffee/Tea,BRND-007,Food & Beverage,33000.0
+PROD-00050,Salmon Sushi,BRND-008,Food & Beverage,21000.0
+PROD-00051,Tuna Sushi,BRND-008,Food & Beverage,31000.0
+PROD-00052,Ebi Fry Roll,BRND-008,Food & Beverage,46000.0
+PROD-00053,California Roll,BRND-008,Food & Beverage,51000.0
+PROD-00054,Tempura Udon,BRND-008,Food & Beverage,80000.0
+PROD-00055,Chicken Teriyaki Rice,BRND-008,Food & Beverage,62000.0
+PROD-00056,Salmon Donburi,BRND-008,Food & Beverage,84000.0
+PROD-00057,Gyoza,BRND-008,Food & Beverage,31000.0
+PROD-00058,Miso Soup,BRND-008,Food & Beverage,18000.0
+PROD-00059,Green Tea (hot/cold),BRND-008,Food & Beverage,15000.0
+PROD-00060,Original Glazed,BRND-009,Food & Beverage,14000.0
+PROD-00061,Assorted Donut,BRND-009,Food & Beverage,18000.0
+PROD-00062,Donut Box (12 pcs),BRND-009,Food & Beverage,170000.0
+PROD-00063,Coffee,BRND-009,Food & Beverage,38000.0
+PROD-00064,Milkshake,BRND-009,Food & Beverage,38000.0
+PROD-00065,Soft Drink,BRND-009,Food & Beverage,24000.0
+PROD-00066,2 Pc Fried Chicken,BRND-010,Food & Beverage,51000.0
+PROD-00067,Chicken Sandwich,BRND-010,Food & Beverage,46000.0
+PROD-00068,Popcorn Chicken,BRND-010,Food & Beverage,28000.0
+PROD-00069,Mashed Potato,BRND-010,Food & Beverage,16000.0
+PROD-00070,Biscuit,BRND-010,Food & Beverage,19000.0
+PROD-00071,Family Bucket,BRND-010,Food & Beverage,121000.0
+PROD-00072,Soft Drink,BRND-010,Food & Beverage,19000.0
+PROD-00073,6-inch Sandwich,BRND-011,Food & Beverage,51000.0
+PROD-00074,Footlong Sandwich,BRND-011,Food & Beverage,77000.0
+PROD-00075,Salad Bowl,BRND-011,Food & Beverage,60000.0
+PROD-00076,Cookie,BRND-011,Food & Beverage,15000.0
+PROD-00077,Soup of the Day,BRND-011,Food & Beverage,31000.0
+PROD-00078,Wrap,BRND-011,Food & Beverage,51000.0
+PROD-00079,Soft Drink,BRND-011,Food & Beverage,21000.0
+PROD-00080,Designer Handbag,BRND-012,Department Stores / Supermarkets,9371000.0
+PROD-00081,Luxury Watch,BRND-012,Department Stores / Supermarkets,22971000.0
+PROD-00082,Perfume,BRND-012,Department Stores / Supermarkets,3824000.0
+PROD-00083,Designer Dress,BRND-012,Department Stores / Supermarkets,9776000.0
+PROD-00084,Suit (Men’s),BRND-012,Department Stores / Supermarkets,18776000.0
+PROD-00085,Shoes (Luxury),BRND-012,Department Stores / Supermarkets,88888888.0
+PROD-00086,Jewelry,BRND-012,Department Stores / Supermarkets,22239000.0
+PROD-00087,Sunglasses,BRND-012,Department Stores / Supermarkets,3248000.0
+PROD-00088,Leather Wallet,BRND-012,Department Stores / Supermarkets,2142000.0
+PROD-00089,Cosmetic Set,BRND-012,Department Stores / Supermarkets,4021000.0
+PROD-00090,Women’s Apparel,BRND-013,Department Stores / Supermarkets,2933000.0
+PROD-00091,Men’s Apparel,BRND-013,Department Stores / Supermarkets,3003000.0
+PROD-00092,Shoes,BRND-013,Department Stores / Supermarkets,1588000.0
+PROD-00093,Handbags,BRND-013,Department Stores / Supermarkets,2699000.0
+PROD-00094,Kitchenware,BRND-013,Department Stores / Supermarkets,387000.0
+PROD-00095,Bedding (set),BRND-013,Department Stores / Supermarkets,5253000.0
+PROD-00096,Perfume,BRND-013,Department Stores / Supermarkets,2196000.0
+PROD-00097,Cosmetics,BRND-013,Department Stores / Supermarkets,1531000.0
+PROD-00098,Women’s Apparel,BRND-014,Department Stores / Supermarkets,1460000.0
+PROD-00099,Men’s Apparel,BRND-014,Department Stores / Supermarkets,1046000.0
+PROD-00100,Shoes,BRND-014,Department Stores / Supermarkets,909000.0
+PROD-00101,Bags,BRND-014,Department Stores / Supermarkets,2722000.0
+PROD-00102,Cookware,BRND-014,Department Stores / Supermarkets,460000.0
+PROD-00103,Furniture,BRND-014,Department Stores / Supermarkets,3627000.0
+PROD-00104,Skincare,BRND-014,Department Stores / Supermarkets,733000.0
+PROD-00105,Perfume,BRND-014,Department Stores / Supermarkets,632000.0
+PROD-00106,Fresh Produce,BRND-015,Department Stores / Supermarkets,64000.0
+PROD-00107,Meat & Poultry,BRND-015,Department Stores / Supermarkets,145000.0
+PROD-00108,Seafood,BRND-015,Department Stores / Supermarkets,208000.0
+PROD-00109,Dairy,BRND-015,Department Stores / Supermarkets,26000.0
+PROD-00110,Bread & Bakery,BRND-015,Department Stores / Supermarkets,75000.0
+PROD-00111,Packaged Snacks,BRND-015,Department Stores / Supermarkets,41000.0
+PROD-00112,Beverages,BRND-015,Department Stores / Supermarkets,10000.0
+PROD-00113,Wine & Spirits,BRND-015,Department Stores / Supermarkets,2336000.0
+PROD-00114,Toiletries,BRND-015,Department Stores / Supermarkets,110000.0
+PROD-00115,Cleaning Supplies,BRND-015,Department Stores / Supermarkets,179000.0
+PROD-00116,Frozen Foods,BRND-015,Department Stores / Supermarkets,43000.0
+PROD-00117,Organic Section,BRND-015,Department Stores / Supermarkets,217000.0
+PROD-00118,Ready Meals,BRND-016,Department Stores / Supermarkets,65000.0
+PROD-00119,Sandwiches,BRND-016,Department Stores / Supermarkets,41000.0
+PROD-00120,Snacks,BRND-016,Department Stores / Supermarkets,35000.0
+PROD-00121,Drinks,BRND-016,Department Stores / Supermarkets,42000.0
+PROD-00122,Packaged Fruits,BRND-016,Department Stores / Supermarkets,32000.0
+PROD-00123,Dairy,BRND-016,Department Stores / Supermarkets,42000.0
+PROD-00124,Earrings,BRND-017,Fashion & Accessories,230000.0
+PROD-00125,Necklace,BRND-017,Fashion & Accessories,585000.0
+PROD-00126,Bracelet,BRND-017,Fashion & Accessories,407000.0
+PROD-00127,Hair Accessories,BRND-017,Fashion & Accessories,101000.0
+PROD-00128,Sunglasses,BRND-017,Fashion & Accessories,686000.0
+PROD-00129,Bags,BRND-017,Fashion & Accessories,837000.0
+PROD-00130,Handbag,BRND-018,Fashion & Accessories,1289000.0
+PROD-00131,Wallet,BRND-018,Fashion & Accessories,543000.0
+PROD-00132,Shoes,BRND-018,Fashion & Accessories,1189000.0
+PROD-00133,Belt,BRND-018,Fashion & Accessories,248000.0
+PROD-00134,Cardholder,BRND-018,Fashion & Accessories,188000.0
+PROD-00135,Cocktail Dress,BRND-019,Fashion & Accessories,2148000.0
+PROD-00136,Evening Gown,BRND-019,Fashion & Accessories,13184000.0
+PROD-00137,Casual Dress,BRND-019,Fashion & Accessories,1595000.0
+PROD-00138,Jumpsuit,BRND-019,Fashion & Accessories,4180000.0
+PROD-00139,Blouse,BRND-019,Fashion & Accessories,2399000.0
+PROD-00140,Skirt,BRND-019,Fashion & Accessories,2634000.0
+PROD-00141,Heels,BRND-019,Fashion & Accessories,4093000.0
+PROD-00142,Graphic Tee,BRND-020,Fashion & Accessories,219000.0
+PROD-00143,Jeans,BRND-020,Fashion & Accessories,593000.0
+PROD-00144,Hoodie,BRND-020,Fashion & Accessories,439000.0
+PROD-00145,Jacket,BRND-020,Fashion & Accessories,1096000.0
+PROD-00146,Sneakers,BRND-020,Fashion & Accessories,802000.0
+PROD-00147,Dress,BRND-020,Fashion & Accessories,841000.0
+PROD-00148,Crop Top,BRND-020,Fashion & Accessories,310000.0
+PROD-00149,Skirt,BRND-020,Fashion & Accessories,322000.0
+PROD-00150,Dress Shirt,BRND-021,Fashion & Accessories,1853000.0
+PROD-00151,Suit,BRND-021,Fashion & Accessories,14728000.0
+PROD-00152,Polo Shirt,BRND-021,Fashion & Accessories,1672000.0
+PROD-00153,Tie,BRND-021,Fashion & Accessories,725000.0
+PROD-00154,Blazer,BRND-021,Fashion & Accessories,5098000.0
+PROD-00155,Leather Shoes,BRND-021,Fashion & Accessories,5650000.0
+PROD-00156,T-shirt,BRND-022,Fashion & Accessories,291000.0
+PROD-00157,Shirt,BRND-022,Fashion & Accessories,594000.0
+PROD-00158,Suit Jacket,BRND-022,Fashion & Accessories,2326000.0
+PROD-00159,Pants,BRND-022,Fashion & Accessories,432000.0
+PROD-00160,Shoes,BRND-022,Fashion & Accessories,970000.0
+PROD-00161,Coat,BRND-022,Fashion & Accessories,2655000.0
+PROD-00162,Blouse,BRND-023,Fashion & Accessories,
+PROD-00163,Skirt,BRND-023,Fashion & Accessories,411000.0
+PROD-00164,Dress,BRND-023,Fashion & Accessories,890000.0
+PROD-00165,Cardigan,BRND-023,Fashion & Accessories,
+PROD-00166,Pants,BRND-023,Fashion & Accessories,645000.0
+PROD-00167,Sneakers,BRND-024,Fashion & Accessories,99999999.0
+PROD-00168,Leather Shoes,BRND-024,Fashion & Accessories,2014000.0
+PROD-00169,Sandals,BRND-024,Fashion & Accessories,
+PROD-00170,Boots,BRND-024,Fashion & Accessories,3736000.0
+PROD-00171,Bags,BRND-024,Fashion & Accessories,2853000.0
+PROD-00172,Tote Bag,BRND-025,Fashion & Accessories,662000.0
+PROD-00173,Backpack,BRND-025,Fashion & Accessories,920000.0
+PROD-00174,Wallet,BRND-025,Fashion & Accessories,460000.0
+PROD-00175,Mug,BRND-025,Fashion & Accessories,243000.0
+PROD-00176,Stationery Set,BRND-025,Fashion & Accessories,174000.0
+PROD-00177,T-shirt,BRND-026,Fashion & Accessories,302000.0
+PROD-00178,Polo,BRND-026,Fashion & Accessories,514000.0
+PROD-00179,Hoodie,BRND-026,Fashion & Accessories,544000.0
+PROD-00180,Jeans,BRND-026,Fashion & Accessories,757000.0
+PROD-00181,Sneakers,BRND-026,Fashion & Accessories,902000.0
+PROD-00182,Cap,BRND-026,Fashion & Accessories,262000.0
+PROD-00183,Basic Tee,BRND-027,Fashion & Accessories,237000.0
+PROD-00184,Hoodie,BRND-027,Fashion & Accessories,420000.0
+PROD-00185,Jeans,BRND-027,Fashion & Accessories,623000.0
+PROD-00186,Shorts,BRND-027,Fashion & Accessories,469000.0
+PROD-00187,Dress,BRND-027,Fashion & Accessories,374000.0
+PROD-00188,Swimwear,BRND-027,Fashion & Accessories,413000.0
+PROD-00189,Sandals,BRND-027,Fashion & Accessories,88888888.0
+PROD-00190,Pajamas,BRND-027,Fashion & Accessories,414000.0
+PROD-00191,Printed T-shirt,BRND-028,Fashion & Accessories,796000.0
+PROD-00192,Colorful Dress,BRND-028,Fashion & Accessories,2180000.0
+PROD-00193,Handbag,BRND-028,Fashion & Accessories,2511000.0
+PROD-00194,Jacket,BRND-028,Fashion & Accessories,88888888.0
+PROD-00195,Scarf,BRND-028,Fashion & Accessories,813000.0
+PROD-00196,T-shirt,BRND-029,Fashion & Accessories,1175000.0
+PROD-00197,Hoodie,BRND-029,Fashion & Accessories,1920000.0
+PROD-00198,Dress,BRND-029,Fashion & Accessories,3115000.0
+PROD-00199,Bag,BRND-029,Fashion & Accessories,4589000.0
+PROD-00200,Watch,BRND-029,Fashion & Accessories,4880000.0
+PROD-00201,Sneakers,BRND-029,Fashion & Accessories,2901000.0
+PROD-00202,Blouse,BRND-030,Fashion & Accessories,510000.0
+PROD-00203,Dress,BRND-030,Fashion & Accessories,617000.0
+PROD-00204,Pants,BRND-030,Fashion & Accessories,688000.0
+PROD-00205,Skirt,BRND-030,Fashion & Accessories,
+PROD-00206,Cardigan,BRND-030,Fashion & Accessories,725000.0
+PROD-00207,Heels,BRND-030,Fashion & Accessories,1357000.0
+PROD-00208,Boots,BRND-031,Fashion & Accessories,2207000.0
+PROD-00209,Shoes,BRND-031,Fashion & Accessories,1810000.0
+PROD-00210,Sandals,BRND-031,Fashion & Accessories,2314000.0
+PROD-00211,Bag,BRND-031,Fashion & Accessories,1376000.0
+PROD-00212,Accessories,BRND-031,Fashion & Accessories,336000.0
+PROD-00213,T-shirt,BRND-032,Fashion & Accessories,869000.0
+PROD-00214,Shirt,BRND-032,Fashion & Accessories,757000.0
+PROD-00215,Hoodie,BRND-032,Fashion & Accessories,1232000.0
+PROD-00216,Dress,BRND-032,Fashion & Accessories,1052000.0
+PROD-00217,Jeans,BRND-032,Fashion & Accessories,1151000.0
+PROD-00218,Dress,BRND-033,Fashion & Accessories,962000.0
+PROD-00219,Blouse,BRND-033,Fashion & Accessories,833000.0
+PROD-00220,Skirt,BRND-033,Fashion & Accessories,592000.0
+PROD-00221,Jacket,BRND-033,Fashion & Accessories,88888888.0
+PROD-00222,Dress,BRND-034,Fashion & Accessories,3406000.0
+PROD-00223,Blouse,BRND-034,Fashion & Accessories,892000.0
+PROD-00224,Skirt,BRND-034,Fashion & Accessories,2221000.0
+PROD-00225,Coat,BRND-034,Fashion & Accessories,4076000.0
+PROD-00226,Backpack,BRND-035,Fashion & Accessories,
+PROD-00227,Handbag,BRND-035,Fashion & Accessories,1141000.0
+PROD-00228,Luggage,BRND-035,Fashion & Accessories,2187000.0
+PROD-00229,Pouch,BRND-035,Fashion & Accessories,648000.0
+PROD-00230,Dress,BRND-036,Fashion & Accessories,912000.0
+PROD-00231,Blouse,BRND-036,Fashion & Accessories,638000.0
+PROD-00232,Skirt,BRND-036,Fashion & Accessories,488000.0
+PROD-00233,Shoes,BRND-036,Fashion & Accessories,1033000.0
+PROD-00234,Handbag,BRND-037,Fashion & Accessories,47691000.0
+PROD-00235,Wallet,BRND-037,Fashion & Accessories,6409000.0
+PROD-00236,Belt,BRND-037,Fashion & Accessories,6972000.0
+PROD-00237,Sunglasses,BRND-037,Fashion & Accessories,5880000.0
+PROD-00238,Polo Shirt,BRND-038,Fashion & Accessories,
+PROD-00239,T-shirt,BRND-038,Fashion & Accessories,1688000.0
+PROD-00240,Sneakers,BRND-038,Fashion & Accessories,2096000.0
+PROD-00241,Hoodie,BRND-038,Fashion & Accessories,1905000.0
+PROD-00242,Jacket,BRND-038,Fashion & Accessories,4613000.0
+PROD-00243,Cap,BRND-038,Fashion & Accessories,715000.0
+PROD-00244,Dress,BRND-039,Fashion & Accessories,1215000.0
+PROD-00245,Blouse,BRND-039,Fashion & Accessories,744000.0
+PROD-00246,Skirt,BRND-039,Fashion & Accessories,651000.0
+PROD-00247,Trousers,BRND-039,Fashion & Accessories,1037000.0
+PROD-00248,Jacket,BRND-039,Fashion & Accessories,1184000.0
+PROD-00249,Bag,BRND-039,Fashion & Accessories,1479000.0
+PROD-00250,Shoes,BRND-039,Fashion & Accessories,1173000.0
+PROD-00251,Lingerie,BRND-040,Fashion & Accessories,300000.0
+PROD-00252,Men's Shirt,BRND-040,Fashion & Accessories,852000.0
+PROD-00253,Women's Dress,BRND-040,Fashion & Accessories,973000.0
+PROD-00254,Suit,BRND-040,Fashion & Accessories,3647000.0
+PROD-00255,Food Hamper,BRND-040,Fashion & Accessories,881000.0
+PROD-00256,Shirt,BRND-041,Fashion & Accessories,1672000.0
+PROD-00257,Blazer,BRND-041,Fashion & Accessories,5639000.0
+PROD-00258,Trousers,BRND-041,Fashion & Accessories,
+PROD-00259,Dress,BRND-041,Fashion & Accessories,4724000.0
+PROD-00260,Coat,BRND-041,Fashion & Accessories,7265000.0
+PROD-00261,Leather Shoes,BRND-041,Fashion & Accessories,5101000.0
+PROD-00262,Dress,BRND-042,Fashion & Accessories,2041000.0
+PROD-00263,Coat,BRND-042,Fashion & Accessories,5210000.0
+PROD-00264,Blouse,BRND-042,Fashion & Accessories,2065000.0
+PROD-00265,Trousers,BRND-042,Fashion & Accessories,
+PROD-00266,Coat,BRND-043,Fashion & Accessories,26520000.0
+PROD-00267,Dress,BRND-043,Fashion & Accessories,13065000.0
+PROD-00268,Handbag,BRND-043,Fashion & Accessories,15585000.0
+PROD-00269,Sweater,BRND-043,Fashion & Accessories,7139000.0
+PROD-00270,Kid's Dress,BRND-044,Fashion & Accessories,343000.0
+PROD-00271,Kid's T-shirt,BRND-044,Fashion & Accessories,88888888.0
+PROD-00272,Kid's Jeans,BRND-044,Fashion & Accessories,684000.0
+PROD-00273,Kid's Shoes,BRND-044,Fashion & Accessories,608000.0
+PROD-00274,Dress,BRND-045,Fashion & Accessories,819000.0
+PROD-00275,Top,BRND-045,Fashion & Accessories,581000.0
+PROD-00276,Jeans,BRND-045,Fashion & Accessories,99999999.0
+PROD-00277,Jacket,BRND-045,Fashion & Accessories,
+PROD-00278,Polo Shirt,BRND-046,Fashion & Accessories,1023000.0
+PROD-00279,Jacket,BRND-046,Fashion & Accessories,1917000.0
+PROD-00280,Sweater,BRND-046,Fashion & Accessories,828000.0
+PROD-00281,Shorts,BRND-046,Fashion & Accessories,770000.0
+PROD-00282,Cap,BRND-046,Fashion & Accessories,346000.0
+PROD-00283,Sneakers,BRND-046,Fashion & Accessories,1427000.0
+PROD-00284,Heels,BRND-047,Fashion & Accessories,1556000.0
+PROD-00285,Flats,BRND-047,Fashion & Accessories,1097000.0
+PROD-00286,Boots,BRND-047,Fashion & Accessories,2793000.0
+PROD-00287,Handbag,BRND-047,Fashion & Accessories,
+PROD-00288,Dress,BRND-048,Fashion & Accessories,570000.0
+PROD-00289,Top,BRND-048,Fashion & Accessories,574000.0
+PROD-00290,Skirt,BRND-048,Fashion & Accessories,573000.0
+PROD-00291,Jacket,BRND-048,Fashion & Accessories,768000.0
+PROD-00292,Bag,BRND-048,Fashion & Accessories,512000.0
+PROD-00293,Shoes,BRND-048,Fashion & Accessories,699000.0
+PROD-00294,Dress,BRND-049,Fashion & Accessories,869000.0
+PROD-00295,Blouse,BRND-049,Fashion & Accessories,729000.0
+PROD-00296,Skirt,BRND-049,Fashion & Accessories,784000.0
+PROD-00297,Jacket,BRND-049,Fashion & Accessories,999000.0
+PROD-00298,Handbag,BRND-049,Fashion & Accessories,1458000.0
+PROD-00299,Charm,BRND-050,Fashion & Accessories,692000.0
+PROD-00300,Bracelet,BRND-050,Fashion & Accessories,
+PROD-00301,Necklace,BRND-050,Fashion & Accessories,2787000.0
+PROD-00302,Ring,BRND-050,Fashion & Accessories,1119000.0
+PROD-00303,Heels,BRND-051,Fashion & Accessories,1396000.0
+PROD-00304,Flats,BRND-051,Fashion & Accessories,687000.0
+PROD-00305,Sandals,BRND-051,Fashion & Accessories,787000.0
+PROD-00306,Hoodie,BRND-052,Fashion & Accessories,633000.0
+PROD-00307,T-shirt,BRND-052,Fashion & Accessories,207000.0
+PROD-00308,Jeans,BRND-052,Fashion & Accessories,833000.0
+PROD-00309,Jacket,BRND-052,Fashion & Accessories,1238000.0
+PROD-00310,Sneakers,BRND-052,Fashion & Accessories,688000.0
+PROD-00311,Cap,BRND-052,Fashion & Accessories,319000.0
+PROD-00312,Shapewear,BRND-053,Fashion & Accessories,1607000.0
+PROD-00313,Leggings,BRND-053,Fashion & Accessories,1250000.0
+PROD-00314,Bra,BRND-053,Fashion & Accessories,754000.0
+PROD-00315,Sneakers,BRND-054,Fashion & Accessories,1205000.0
+PROD-00316,Sandals,BRND-054,Fashion & Accessories,998000.0
+PROD-00317,Casual Shoes,BRND-054,Fashion & Accessories,792000.0
+PROD-00318,Heels,BRND-055,Fashion & Accessories,1064000.0
+PROD-00319,Flats,BRND-055,Fashion & Accessories,1212000.0
+PROD-00320,Sandals,BRND-055,Fashion & Accessories,999000.0
+PROD-00321,Bags,BRND-055,Fashion & Accessories,1384000.0
+PROD-00322,Heels,BRND-056,Fashion & Accessories,1422000.0
+PROD-00323,Sneakers,BRND-056,Fashion & Accessories,1548000.0
+PROD-00324,Boots,BRND-056,Fashion & Accessories,2452000.0
+PROD-00325,Handbags,BRND-056,Fashion & Accessories,2123000.0
+PROD-00326,Accessories,BRND-056,Fashion & Accessories,527000.0
+PROD-00327,Dress,BRND-057,Fashion & Accessories,740000.0
+PROD-00328,Top,BRND-057,Fashion & Accessories,437000.0
+PROD-00329,Jeans,BRND-057,Fashion & Accessories,658000.0
+PROD-00330,Shoes,BRND-057,Fashion & Accessories,1347000.0
+PROD-00331,Dress,BRND-058,Fashion & Accessories,88888888.0
+PROD-00332,Blouse,BRND-058,Fashion & Accessories,675000.0
+PROD-00333,Jeans,BRND-058,Fashion & Accessories,703000.0
+PROD-00334,Bag,BRND-058,Fashion & Accessories,870000.0
+PROD-00335,Necklace,BRND-059,Fashion & Accessories,2416000.0
+PROD-00336,Earrings,BRND-059,Fashion & Accessories,1767000.0
+PROD-00337,Bracelet,BRND-059,Fashion & Accessories,1392000.0
+PROD-00338,Ring,BRND-059,Fashion & Accessories,1083000.0
+PROD-00339,Watch,BRND-059,Fashion & Accessories,2474000.0
+PROD-00340,Formal Shirt,BRND-060,Fashion & Accessories,
+PROD-00341,Tie,BRND-060,Fashion & Accessories,770000.0
+PROD-00342,Suit,BRND-060,Fashion & Accessories,6614000.0
+PROD-00343,Cufflinks,BRND-060,Fashion & Accessories,1667000.0
+PROD-00344,T-shirt,BRND-061,Fashion & Accessories,472000.0
+PROD-00345,Shirt,BRND-061,Fashion & Accessories,743000.0
+PROD-00346,Jeans,BRND-061,Fashion & Accessories,587000.0
+PROD-00347,Jacket,BRND-061,Fashion & Accessories,1080000.0
+PROD-00348,Dress (Topshop),BRND-061,Fashion & Accessories,952000.0
+PROD-00349,Shoes,BRND-061,Fashion & Accessories,688000.0
+PROD-00350,Dress,BRND-062,Fashion & Accessories,1059000.0
+PROD-00351,Blazer,BRND-062,Fashion & Accessories,1454000.0
+PROD-00352,Trousers,BRND-062,Fashion & Accessories,864000.0
+PROD-00353,Shoes,BRND-062,Fashion & Accessories,1010000.0
+PROD-00354,Bag,BRND-062,Fashion & Accessories,1074000.0
+PROD-00355,Dress,BRND-063,Fashion & Accessories,595000.0
+PROD-00356,Blouse,BRND-063,Fashion & Accessories,88888888.0
+PROD-00357,Skazer (skirt + blazer set),BRND-063,Fashion & Accessories,976000.0
+PROD-00358,Coat,BRND-063,Fashion & Accessories,2084000.0
+PROD-00359,Dress,BRND-064,Fashion & Accessories,959000.0
+PROD-00360,Blouse,BRND-064,Fashion & Accessories,750000.0
+PROD-00361,Pants,BRND-064,Fashion & Accessories,88888888.0
+PROD-00362,Jacket,BRND-064,Fashion & Accessories,88888888.0
+PROD-00363,Skirt,BRND-064,Fashion & Accessories,
+PROD-00364,Running Shoes,BRND-065,Sports / Active,2427000.0
+PROD-00365,Basketball Shoes,BRND-065,Sports / Active,1731000.0
+PROD-00366,Football Boots,BRND-065,Sports / Active,1543000.0
+PROD-00367,Training Shorts,BRND-065,Sports / Active,702000.0
+PROD-00368,Sports T-shirt,BRND-065,Sports / Active,646000.0
+PROD-00369,Hoodie,BRND-065,Sports / Active,1056000.0
+PROD-00370,Cap,BRND-065,Sports / Active,364000.0
+PROD-00371,Backpack,BRND-065,Sports / Active,
+PROD-00372,Running Shoes,BRND-066,Sports / Active,2155000.0
+PROD-00373,Sneakers,BRND-066,Sports / Active,2361000.0
+PROD-00374,Football Boots,BRND-066,Sports / Active,1223000.0
+PROD-00375,Sports T-shirt,BRND-066,Sports / Active,517000.0
+PROD-00376,Training Pants,BRND-066,Sports / Active,852000.0
+PROD-00377,Jacket,BRND-066,Sports / Active,915000.0
+PROD-00378,Gym Bag,BRND-066,Sports / Active,500000.0
+PROD-00379,Socks (3-pack),BRND-066,Sports / Active,210000.0
+PROD-00380,Classic Sneakers,BRND-067,Sports / Active,974000.0
+PROD-00381,High-top Sneakers,BRND-067,Sports / Active,1223000.0
+PROD-00382,Limited Edition Sneakers,BRND-067,Sports / Active,2614000.0
+PROD-00383,T-shirt,BRND-067,Sports / Active,405000.0
+PROD-00384,Hoodie,BRND-067,Sports / Active,1253000.0
+PROD-00385,Backpack,BRND-067,Sports / Active,717000.0
+PROD-00386,Walking Shoes,BRND-068,Sports / Active,952000.0
+PROD-00387,Running Shoes,BRND-068,Sports / Active,1777000.0
+PROD-00388,Sandals,BRND-068,Sports / Active,1051000.0
+PROD-00389,Slip-ons,BRND-068,Sports / Active,1094000.0
+PROD-00390,Sports Bra,BRND-068,Sports / Active,501000.0
+PROD-00391,Leggings,BRND-068,Sports / Active,604000.0
+PROD-00392,Branded Sneakers (Nike/Adidas etc.),BRND-069,Sports / Active,2608000.0
+PROD-00393,Running Apparel,BRND-069,Sports / Active,914000.0
+PROD-00394,Training Shoes,BRND-069,Sports / Active,2234000.0
+PROD-00395,Football Jerseys,BRND-069,Sports / Active,1157000.0
+PROD-00396,Caps,BRND-069,Sports / Active,450000.0
+PROD-00397,Sports Socks,BRND-069,Sports / Active,134000.0
+PROD-00398,Running Shoes,BRND-070,Sports / Active,1347000.0
+PROD-00399,Basketball Shoes,BRND-070,Sports / Active,2303000.0
+PROD-00400,Training Apparel,BRND-070,Sports / Active,461000.0
+PROD-00401,Sports Jacket,BRND-070,Sports / Active,1200000.0
+PROD-00402,"Gym Accessories (bottle, mat)",BRND-070,Sports / Active,283000.0
+PROD-00403,Sports Bag,BRND-070,Sports / Active,1130000.0
+PROD-00404,Performance Running Shoes,BRND-071,Sports / Active,1276000.0
+PROD-00405,Training T-shirt,BRND-071,Sports / Active,535000.0
+PROD-00406,Sports Shorts,BRND-071,Sports / Active,694000.0
+PROD-00407,Sweatshirt,BRND-071,Sports / Active,1004000.0
+PROD-00408,Socks,BRND-071,Sports / Active,218000.0
+PROD-00409,Backpack,BRND-071,Sports / Active,574000.0
+PROD-00410,Running Shoes,BRND-072,Sports / Active,1638000.0
+PROD-00411,Indoor Court Shoes,BRND-072,Sports / Active,1536000.0
+PROD-00412,Tracksuit,BRND-072,Sports / Active,1303000.0
+PROD-00413,Jersey,BRND-072,Sports / Active,561000.0
+PROD-00414,Sports Bra,BRND-072,Sports / Active,88888888.0
+PROD-00415,Fitness Gloves,BRND-072,Sports / Active,369000.0
+PROD-00416,Football Boots,BRND-073,Sports / Active,1743000.0
+PROD-00417,Replica Jersey,BRND-073,Sports / Active,1383000.0
+PROD-00418,Training Shorts,BRND-073,Sports / Active,552000.0
+PROD-00419,Goalkeeper Gloves,BRND-073,Sports / Active,758000.0
+PROD-00420,Shin Guards,BRND-073,Sports / Active,302000.0
+PROD-00421,Football,BRND-073,Sports / Active,741000.0
+PROD-00422,Running Shoes (Outlet),BRND-074,Sports / Active,965000.0
+PROD-00423,Basketball Shoes,BRND-074,Sports / Active,1805000.0
+PROD-00424,Hoodie,BRND-074,Sports / Active,969000.0
+PROD-00425,T-shirt,BRND-074,Sports / Active,208000.0
+PROD-00426,Training Pants,BRND-074,Sports / Active,412000.0
+PROD-00427,Cap,BRND-074,Sports / Active,286000.0
+PROD-00428,Swimsuit (Women),BRND-075,Sports / Active,734000.0
+PROD-00429,Swim Trunks (Men),BRND-075,Sports / Active,773000.0
+PROD-00430,Swim Goggles,BRND-075,Sports / Active,88888888.0
+PROD-00431,Swim Cap,BRND-075,Sports / Active,224000.0
+PROD-00432,Training Fins,BRND-075,Sports / Active,821000.0
+PROD-00433,Towel,BRND-075,Sports / Active,215000.0
+PROD-00434,Training Shoes,BRND-076,Sports / Active,2171000.0
+PROD-00435,Running Shoes,BRND-076,Sports / Active,2131000.0
+PROD-00436,Crossfit Apparel,BRND-076,Sports / Active,
+PROD-00437,Hoodie,BRND-076,Sports / Active,1264000.0
+PROD-00438,Backpack,BRND-076,Sports / Active,988000.0
+PROD-00439,Socks (3-pack),BRND-076,Sports / Active,159000.0
+PROD-00440,Classic Sneakers,BRND-077,Sports / Active,1295000.0
+PROD-00441,Limited Sneakers,BRND-077,Sports / Active,2997000.0
+PROD-00442,T-shirt,BRND-077,Sports / Active,553000.0
+PROD-00443,Hoodie,BRND-077,Sports / Active,
+PROD-00444,Tote Bag,BRND-077,Sports / Active,572000.0
+PROD-00445,Cap,BRND-077,Sports / Active,401000.0
+PROD-00446,Outdoor Boots,BRND-078,Sports / Active,2208000.0
+PROD-00447,Casual Sneakers,BRND-078,Sports / Active,1437000.0
+PROD-00448,Jacket,BRND-078,Sports / Active,
+PROD-00449,Backpack,BRND-078,Sports / Active,967000.0
+PROD-00450,Cap,BRND-078,Sports / Active,307000.0
+PROD-00451,Leather Wallet,BRND-078,Sports / Active,985000.0
+PROD-00452,Running Shoes,BRND-079,Sports / Active,1407000.0
+PROD-00453,Lifestyle Sneakers,BRND-079,Sports / Active,
+PROD-00454,Hoodie,BRND-079,Sports / Active,1271000.0
+PROD-00455,Jogger Pants,BRND-079,Sports / Active,807000.0
+PROD-00456,T-shirt,BRND-079,Sports / Active,575000.0
+PROD-00457,Backpack,BRND-079,Sports / Active,1130000.0
+PROD-00458,Sports Sunglasses,BRND-080,Sports / Active,2352000.0
+PROD-00459,Lifestyle Sunglasses,BRND-080,Sports / Active,1560000.0
+PROD-00460,Backpack,BRND-080,Sports / Active,1351000.0
+PROD-00461,T-shirt,BRND-080,Sports / Active,524000.0
+PROD-00462,Cap,BRND-080,Sports / Active,520000.0
+PROD-00463,Ski Goggles,BRND-080,Sports / Active,2001000.0
+PROD-00464,Road Running Shoes,BRND-081,Sports / Active,2396000.0
+PROD-00465,Trail Running Shoes,BRND-081,Sports / Active,3359000.0
+PROD-00466,Walking Shoes,BRND-081,Sports / Active,2295000.0
+PROD-00467,Lightweight Jacket,BRND-081,Sports / Active,1554000.0
+PROD-00468,T-shirt,BRND-081,Sports / Active,668000.0
+PROD-00469,Running Cap,BRND-081,Sports / Active,88888888.0
+PROD-00470,Hiking Boots,BRND-082,Sports / Active,1680000.0
+PROD-00471,Trail Shoes,BRND-082,Sports / Active,1178000.0
+PROD-00472,Sandals,BRND-082,Sports / Active,1168000.0
+PROD-00473,Waterproof Jacket,BRND-082,Sports / Active,980000.0
+PROD-00474,Backpack,BRND-082,Sports / Active,822000.0
+PROD-00475,Socks,BRND-082,Sports / Active,203000.0
+PROD-00476,Football Boots,BRND-083,Sports / Active,987000.0
+PROD-00477,Running Shoes,BRND-083,Sports / Active,88888888.0
+PROD-00478,Training Jacket,BRND-083,Sports / Active,1254000.0
+PROD-00479,Shorts,BRND-083,Sports / Active,574000.0
+PROD-00480,T-shirt,BRND-083,Sports / Active,598000.0
+PROD-00481,Cap,BRND-083,Sports / Active,377000.0
+PROD-00482,Limited Sneakers,BRND-084,Sports / Active,2010000.0
+PROD-00483,Graphic T-shirt,BRND-084,Sports / Active,573000.0
+PROD-00484,Track Jacket,BRND-084,Sports / Active,1394000.0
+PROD-00485,Joggers,BRND-084,Sports / Active,831000.0
+PROD-00486,Messenger Bag,BRND-084,Sports / Active,525000.0
+PROD-00487,Cap,BRND-084,Sports / Active,432000.0
+PROD-00488,Plush Toy,BRND-085,Kids,315000.0
+PROD-00489,Action Figure,BRND-085,Kids,521000.0
+PROD-00490,Doll Set,BRND-085,Kids,238000.0
+PROD-00491,Puzzle/Game,BRND-085,Kids,272000.0
+PROD-00492,RC Car,BRND-085,Kids,
+PROD-00493,Board Game,BRND-085,Kids,543000.0
+PROD-00494,School Backpack,BRND-085,Kids,571000.0
+PROD-00495,Lunchbox,BRND-085,Kids,120000.0
+PROD-00496,Coloring Set,BRND-085,Kids,123000.0
+PROD-00497,Kids Watch,BRND-085,Kids,227000.0
+PROD-00498,Fashion Doll,BRND-086,Kids,396000.0
+PROD-00499,Dollhouse,BRND-086,Kids,1280000.0
+PROD-00500,Fashion Accessories,BRND-086,Kids,270000.0
+PROD-00501,Playset (Car/Salon),BRND-086,Kids,965000.0
+PROD-00502,Mini Doll Pack,BRND-086,Kids,225000.0
+PROD-00503,Collector’s Doll,BRND-086,Kids,4059000.0
+PROD-00504,Baby Bodysuit,BRND-087,Kids,299000.0
+PROD-00505,Kids Jeans,BRND-087,Kids,518000.0
+PROD-00506,T-shirt,BRND-087,Kids,161000.0
+PROD-00507,Dress,BRND-087,Kids,470000.0
+PROD-00508,Overalls,BRND-087,Kids,451000.0
+PROD-00509,Hoodie,BRND-087,Kids,549000.0
+PROD-00510,Shoes,BRND-087,Kids,492000.0
+PROD-00511,Pajamas,BRND-087,Kids,310000.0
+PROD-00512,Baby Shoes,BRND-088,Kids,325000.0
+PROD-00513,Toddler Sneakers,BRND-088,Kids,531000.0
+PROD-00514,Sandals,BRND-088,Kids,359000.0
+PROD-00515,School Shoes,BRND-088,Kids,435000.0
+PROD-00516,Boots,BRND-088,Kids,1083000.0
+PROD-00517,Slip-ons,BRND-088,Kids,381000.0
+PROD-00518,Baby Carrier,BRND-089,Kids,1106000.0
+PROD-00519,Stroller,BRND-089,Kids,7494000.0
+PROD-00520,Car Seat,BRND-089,Kids,4714000.0
+PROD-00521,Crib,BRND-089,Kids,6523000.0
+PROD-00522,Playpen,BRND-089,Kids,2267000.0
+PROD-00523,High Chair,BRND-089,Kids,1735000.0
+PROD-00524,Iron Set (6–iron set),BRND-090,Golf / Specialty Sports,11597000.0
+PROD-00525,Driver (single),BRND-090,Golf / Specialty Sports,4262000.0
+PROD-00526,Fairway Wood,BRND-090,Golf / Specialty Sports,2742000.0
+PROD-00527,Golf Polo Shirt,BRND-090,Golf / Specialty Sports,917000.0
+PROD-00528,Golf Glove,BRND-090,Golf / Specialty Sports,267000.0
+PROD-00529,Golf Shoes,BRND-091,Golf / Specialty Sports,2944000.0
+PROD-00530,Golf Polo,BRND-091,Golf / Specialty Sports,527000.0
+PROD-00531,Golf Cap,BRND-091,Golf / Specialty Sports,374000.0
+PROD-00532,Golf Bag (stand),BRND-091,Golf / Specialty Sports,1728000.0
+PROD-00533,Hybrid Club,BRND-092,Golf / Specialty Sports,1311000.0
+PROD-00534,Driver,BRND-092,Golf / Specialty Sports,2712000.0
+PROD-00535,Fairway Wood,BRND-092,Golf / Specialty Sports,3389000.0
+PROD-00536,Headcover Set,BRND-092,Golf / Specialty Sports,204000.0
+PROD-00537,Golf Polo Shirt,BRND-093,Golf / Specialty Sports,576000.0
+PROD-00538,Golf Trousers,BRND-093,Golf / Specialty Sports,842000.0
+PROD-00539,Golf Sweater,BRND-093,Golf / Specialty Sports,1801000.0
+PROD-00540,Casual Golf Shoe / Sandal,BRND-094,Golf / Specialty Sports,526000.0
+PROD-00541,Golf Clog,BRND-094,Golf / Specialty Sports,753000.0
+PROD-00542,Premium Golf Shoes,BRND-095,Golf / Specialty Sports,3557000.0
+PROD-00543,Golf Insoles & Care Kit,BRND-095,Golf / Specialty Sports,361000.0
+PROD-00544,Spikeless Golf Shoe,BRND-096,Golf / Specialty Sports,1319000.0
+PROD-00545,Golf Socks (pair),BRND-096,Golf / Specialty Sports,178000.0
+PROD-00546,Wedge (single),BRND-097,Golf / Specialty Sports,2216000.0
+PROD-00547,Putter,BRND-097,Golf / Specialty Sports,2979000.0
+PROD-00548,Golf Balls (pack),BRND-097,Golf / Specialty Sports,451000.0
+PROD-00549,Driver,BRND-098,Golf / Specialty Sports,2655000.0
+PROD-00550,Irons (single),BRND-098,Golf / Specialty Sports,1445000.0
+PROD-00551,Golf Bag,BRND-098,Golf / Specialty Sports,2108000.0
+PROD-00552,Driver (premium),BRND-099,Golf / Specialty Sports,9837000.0
+PROD-00553,Irons Set,BRND-099,Golf / Specialty Sports,6591000.0
+PROD-00554,Golf Glove / Tees,BRND-099,Golf / Specialty Sports,133000.0
+PROD-00555,Golf Polo,BRND-100,Golf / Specialty Sports,927000.0
+PROD-00556,Golf Pants,BRND-100,Golf / Specialty Sports,623000.0
+PROD-00557,Belt,BRND-100,Golf / Specialty Sports,345000.0
+PROD-00558,Junior Club Set,BRND-101,Golf / Specialty Sports,1297000.0
+PROD-00559,Kids Golf Bag,BRND-101,Golf / Specialty Sports,
+PROD-00560,Golf Balls (12),BRND-102,Golf / Specialty Sports,452000.0
+PROD-00561,Rangefinder,BRND-102,Golf / Specialty Sports,3093000.0
+PROD-00562,Premium Iron Set,BRND-103,Golf / Specialty Sports,33183000.0
+PROD-00563,Limited Edition Club,BRND-103,Golf / Specialty Sports,31352000.0
+PROD-00564,Putter (blade/mallet),BRND-104,Golf / Specialty Sports,1626000.0
+PROD-00565,Putter Cover,BRND-104,Golf / Specialty Sports,
+PROD-00566,Specialty Putter,BRND-105,Golf / Specialty Sports,2372000.0
+PROD-00567,Golf Balls (12),BRND-106,Golf / Specialty Sports,511000.0
+PROD-00568,Iron Set,BRND-106,Golf / Specialty Sports,4399000.0
+PROD-00569,Golf Towels,BRND-107,Golf / Specialty Sports,120000.0
+PROD-00570,Club Head Covers,BRND-107,Golf / Specialty Sports,263000.0
+PROD-00571,Driver (premium),BRND-108,Golf / Specialty Sports,5246000.0
+PROD-00572,Iron Set (steel/carbon),BRND-108,Golf / Specialty Sports,23522000.0
+PROD-00573,Wedges,BRND-108,Golf / Specialty Sports,2907000.0
+PROD-00574,Swing Trainer,BRND-109,Golf / Specialty Sports,887000.0
+PROD-00575,Practice Net,BRND-109,Golf / Specialty Sports,1132000.0
+PROD-00576,Signature Putter,BRND-110,Golf / Specialty Sports,3448000.0
+PROD-00577,Limited Apparel (collab),BRND-110,Golf / Specialty Sports,3490000.0
+PROD-00578,Batik Shirt,BRND-111,Lifestyle & Home,526000.0
+PROD-00579,Batik Dress,BRND-111,Lifestyle & Home,1955000.0
+PROD-00580,Handwoven Scarf,BRND-111,Lifestyle & Home,752000.0
+PROD-00581,Wooden Handicraft (medium),BRND-111,Lifestyle & Home,392000.0
+PROD-00582,Silver Bracelet (local artisan),BRND-111,Lifestyle & Home,2247000.0
+PROD-00583,Leather Sandals (local),BRND-111,Lifestyle & Home,399000.0
+PROD-00584,Traditional Snack Pack (gift),BRND-111,Lifestyle & Home,97000.0
+PROD-00585,Handmade Tote Bag,BRND-111,Lifestyle & Home,288000.0
+PROD-00586,Hand Cream (50ml),BRND-112,Lifestyle & Home,243000.0
+PROD-00587,Body Lotion (250ml),BRND-112,Lifestyle & Home,365000.0
+PROD-00588,Scented Soap (single),BRND-112,Lifestyle & Home,89000.0
+PROD-00589,Gift Set (small),BRND-112,Lifestyle & Home,
+PROD-00590,Scented Candle (medium),BRND-112,Lifestyle & Home,486000.0
+PROD-00591,Luxury Gift Box (premium),BRND-112,Lifestyle & Home,1324000.0
+PROD-00592,Smartphone (flagship),BRND-113,Lifestyle & Home,23130000.0
+PROD-00593,Tablet,BRND-113,Lifestyle & Home,15503000.0
+PROD-00594,Laptop (consumer),BRND-113,Lifestyle & Home,9235000.0
+PROD-00595,Headphones / Earbuds,BRND-113,Lifestyle & Home,4880000.0
+PROD-00596,Official Brand Case / Charger,BRND-113,Lifestyle & Home,368000.0
+PROD-00597,Portable SSD / External Drive,BRND-113,Lifestyle & Home,1851000.0
+PROD-00598,Bluetooth Speaker,BRND-114,Lifestyle & Home,1209000.0
+PROD-00599,Power Bank,BRND-114,Lifestyle & Home,446000.0
+PROD-00600,Smartwatch (mid-range),BRND-114,Lifestyle & Home,3939000.0
+PROD-00601,Phone Screen Protector & Install,BRND-114,Lifestyle & Home,130000.0
+PROD-00602,Wireless Charger,BRND-114,Lifestyle & Home,634000.0
+PROD-00603,Galaxy Flagship Phone,BRND-115,Lifestyle & Home,16473000.0
+PROD-00604,Galaxy Tablet,BRND-115,Lifestyle & Home,
+PROD-00605,Galaxy Watch,BRND-115,Lifestyle & Home,3430000.0
+PROD-00606,"TV (LED 4K, 43""–65"")",BRND-115,Lifestyle & Home,14485000.0
+PROD-00607,Soundbar,BRND-115,Lifestyle & Home,5041000.0
+PROD-00608,Official Samsung Case / Charger,BRND-115,Lifestyle & Home,
+PROD-00609,Fragrance Spray (50ml),BRND-116,Lifestyle & Home,793000.0
+PROD-00610,Body Mist / Room Spray,BRND-116,Lifestyle & Home,135000.0
+PROD-00611,Shower Gel,BRND-116,Lifestyle & Home,240000.0
+PROD-00612,Personal Humidifier / Small Gadget,BRND-116,Lifestyle & Home,564000.0
+PROD-00613,Hardback Novel / Fiction,BRND-117,Lifestyle & Home,181000.0
+PROD-00614,Art / Coffee Table Book,BRND-117,Lifestyle & Home,420000.0
+PROD-00615,Manga Volume,BRND-117,Lifestyle & Home,145000.0
+PROD-00616,Children’s Picture Book,BRND-117,Lifestyle & Home,134000.0
+PROD-00617,Stationery Set / Premium Notebook,BRND-117,Lifestyle & Home,290000.0
+PROD-00618,Language / Reference Textbook,BRND-117,Lifestyle & Home,
+PROD-00619,Large Rolling Luggage,BRND-118,Lifestyle & Home,18923000.0
+PROD-00620,Cabin/Carry-on Luggage,BRND-118,Lifestyle & Home,9007000.0
+PROD-00621,Travel Backpack (premium),BRND-118,Lifestyle & Home,4566000.0
+PROD-00622,Travel Organizer Set,BRND-118,Lifestyle & Home,1161000.0
+PROD-00623,Leather Travel Wallet,BRND-118,Lifestyle & Home,881000.0
+PROD-00624,Polycarbonate Luggage (large),BRND-119,Lifestyle & Home,4650000.0
+PROD-00625,Soft-shell Cabin Luggage,BRND-119,Lifestyle & Home,5760000.0
+PROD-00626,Travel Backpack (business),BRND-119,Lifestyle & Home,3763000.0
+PROD-00627,"Luggage Accessories (locks, straps)",BRND-119,Lifestyle & Home,99999999.0
+PROD-00628,Spinner Luggage (medium),BRND-120,Lifestyle & Home,3775000.0
+PROD-00629,Cabin Case,BRND-120,Lifestyle & Home,1837000.0
+PROD-00630,Kids’ Suitcase,BRND-120,Lifestyle & Home,990000.0
+PROD-00631,Travel Duffel Bag,BRND-120,Lifestyle & Home,928000.0
+PROD-00632,Travel Pillow,BRND-121,Lifestyle & Home,170000.0
+PROD-00633,Packing Cubes (set),BRND-121,Lifestyle & Home,247000.0
+PROD-00634,Universal Adapter,BRND-121,Lifestyle & Home,228000.0
+PROD-00635,Lightweight Daypack,BRND-121,Lifestyle & Home,316000.0
+PROD-00636,Quartz Watch (basic),BRND-122,Lifestyle & Home,1369000.0
+PROD-00637,Fashion Watch (special),BRND-122,Lifestyle & Home,2268000.0
+PROD-00638,Watch Strap (leather/silicone),BRND-122,Lifestyle & Home,715000.0
+PROD-00639,Watch Gift Set,BRND-122,Lifestyle & Home,4645000.0
+PROD-00640,Bed Sheet Set (queen),BRND-123,Lifestyle & Home,1192000.0
+PROD-00641,Throw Blanket / Quilt,BRND-123,Lifestyle & Home,521000.0
+PROD-00642,Cushion Cover,BRND-123,Lifestyle & Home,223000.0
+PROD-00643,Dinnerware Plate (single),BRND-123,Lifestyle & Home,101000.0
+PROD-00644,Scented Candle / Diffuser,BRND-123,Lifestyle & Home,524000.0
+PROD-00645,Bath Towel (single),BRND-123,Lifestyle & Home,523000.0

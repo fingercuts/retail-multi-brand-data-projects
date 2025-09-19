@@ -1,0 +1,124 @@
+brand_id,brand_name,category,holding_company,subsidiary_company
+BRND-001,BrewStar,Food & Beverage,Global Lifestyle Partners,Gourmetia
+BRND-002,Burger Monarch,Food & Beverage,Global Lifestyle Partners,Gourmetia
+BRND-003,FrostRock,Food & Beverage,Global Lifestyle Partners,Gourmetia
+BRND-004,Dominoza,Food & Beverage,Global Lifestyle Partners,Gourmetia
+BRND-005,Pizza Palazzo,Food & Beverage,Global Lifestyle Partners,Gourmetia
+BRND-006,Chocadia,Food & Beverage,Global Lifestyle Partners,Gourmetia
+BRND-007,Pauline’s Bakery,Food & Beverage,Global Lifestyle Partners,Gourmetia
+BRND-008,Sushiba,Food & Beverage,Global Lifestyle Partners,Gourmetia
+BRND-009,Krispy Delights,Food & Beverage,Global Lifestyle Partners,Gourmetia
+BRND-010,Poppy’s Chicken,Food & Beverage,Global Lifestyle Partners,Gourmetia
+BRND-011,Subbite,Food & Beverage,Global Lifestyle Partners,Gourmetia
+BRND-012,Galleria Luxe,Department Stores / Supermarkets,Global Lifestyle Partners,UrbanMart
+BRND-013,Seiluxe,Department Stores / Supermarkets,Global Lifestyle Partners,UrbanMart
+BRND-014,Sogawa,Department Stores / Supermarkets,Global Lifestyle Partners,UrbanMart
+BRND-015,FoodDome,Department Stores / Supermarkets,Global Lifestyle Partners,UrbanMart
+BRND-016,FreshBasket,Department Stores / Supermarkets,Global Lifestyle Partners,UrbanMart
+BRND-017,Accentz,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-018,Beetle Bug,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-019,BCBG Flow,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-020,Bershaka,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-021,Brooks & Bros,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-022,Burton & Co.,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-023,Camellia Wear,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-024,Trailster,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-025,Cathley,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-026,Club Culture,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-027,CottonUp,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-028,Funkwear,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-029,DKNYX,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-030,Dorothy P.,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-031,Doc Marto,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-032,FCUQ,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-033,Forever Nu,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-034,Hossina,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-035,Kippo Bags,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-036,Linora,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-037,Luvéa,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-038,Lacoria,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-039,Mangoa,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-040,Mark & Spencerly,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-041,Massimo Dotti,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-042,Maxelle,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-043,Maxmora,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-044,Mee Too,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-045,Missy S.,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-046,Oceanica,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-047,NineWeston,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-048,NewLooks,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-049,Mirage Wear,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-050,Pandira,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-051,Pretty Step,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-052,Pull&Bend,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-053,Spanique,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-054,Sole Effect,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-055,Staccato,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-056,MaddenStep,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-057,MelodyWear,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-058,BlancoSuite,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-059,Crystaluna,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-060,Thomas P.,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-061,Topstreet,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-062,Zavana,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-063,Walliza,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-064,Storeroom,Fashion & Accessories,Global Lifestyle Partners,StyleCraft
+BRND-065,Nykora,Sports / Active,Global Lifestyle Partners,ActiveCore
+BRND-066,Dashdas,Sports / Active,Global Lifestyle Partners,ActiveCore
+BRND-067,Corvane,Sports / Active,Global Lifestyle Partners,ActiveCore
+BRND-068,Skechura,Sports / Active,Global Lifestyle Partners,ActiveCore
+BRND-069,KickVault,Sports / Active,Global Lifestyle Partners,ActiveCore
+BRND-070,Orbit Sports,Sports / Active,Global Lifestyle Partners,ActiveCore
+BRND-071,The Athlete’s Sole,Sports / Active,Global Lifestyle Partners,ActiveCore
+BRND-072,Sportia Station,Sports / Active,Global Lifestyle Partners,ActiveCore
+BRND-073,SoccerHub,Sports / Active,Global Lifestyle Partners,ActiveCore
+BRND-074,SportsDepot,Sports / Active,Global Lifestyle Partners,ActiveCore
+BRND-075,ArenaX,Sports / Active,Global Lifestyle Partners,ActiveCore
+BRND-076,Rebolt,Sports / Active,Global Lifestyle Partners,ActiveCore
+BRND-077,Solevo,Sports / Active,Global Lifestyle Partners,ActiveCore
+BRND-078,Rockfort,Sports / Active,Global Lifestyle Partners,ActiveCore
+BRND-079,TrueBalance,Sports / Active,Global Lifestyle Partners,ActiveCore
+BRND-080,ShadeX,Sports / Active,Global Lifestyle Partners,ActiveCore
+BRND-081,Skystride,Sports / Active,Global Lifestyle Partners,ActiveCore
+BRND-082,HIKA,Sports / Active,Global Lifestyle Partners,ActiveCore
+BRND-083,Diaduro,Sports / Active,Global Lifestyle Partners,ActiveCore
+BRND-084,Onizuka Panther,Sports / Active,Global Lifestyle Partners,ActiveCore
+BRND-085,Kiddo Station,Kids,Global Lifestyle Partners,KiddieWorld
+BRND-086,DreamDoll,Kids,Global Lifestyle Partners,KiddieWorld
+BRND-087,OshyKoshy,Kids,Global Lifestyle Partners,KiddieWorld
+BRND-088,StrideRite Jr.,Kids,Global Lifestyle Partners,KiddieWorld
+BRND-089,Planet Kidsia,Kids,Global Lifestyle Partners,KiddieWorld
+BRND-090,MizuGolf,Golf / Specialty Sports,Global Lifestyle Partners,Fairway Co.
+BRND-091,Dashdas Golf,Golf / Specialty Sports,Global Lifestyle Partners,Fairway Co.
+BRND-092,AdamsCore,Golf / Specialty Sports,Global Lifestyle Partners,Fairway Co.
+BRND-093,Ashwear,Golf / Specialty Sports,Global Lifestyle Partners,Fairway Co.
+BRND-094,CrocsGolf,Golf / Specialty Sports,Global Lifestyle Partners,Fairway Co.
+BRND-095,Solevo Golf,Golf / Specialty Sports,Global Lifestyle Partners,Fairway Co.
+BRND-096,Etoniq,Golf / Specialty Sports,Global Lifestyle Partners,Fairway Co.
+BRND-097,Clevo,Golf / Specialty Sports,Global Lifestyle Partners,Fairway Co.
+BRND-098,Wilsonia,Golf / Specialty Sports,Global Lifestyle Partners,Fairway Co.
+BRND-099,Callara,Golf / Specialty Sports,Global Lifestyle Partners,Fairway Co.
+BRND-100,Calvin Swing,Golf / Specialty Sports,Global Lifestyle Partners,Fairway Co.
+BRND-101,US MiniGolf,Golf / Specialty Sports,Global Lifestyle Partners,Fairway Co.
+BRND-102,MaxFlyte,Golf / Specialty Sports,Global Lifestyle Partners,Fairway Co.
+BRND-103,Honmera,Golf / Specialty Sports,Global Lifestyle Partners,Fairway Co.
+BRND-104,OddyQuest,Golf / Specialty Sports,Global Lifestyle Partners,Fairway Co.
+BRND-105,YESsure,Golf / Specialty Sports,Global Lifestyle Partners,Fairway Co.
+BRND-106,Strikron,Golf / Specialty Sports,Global Lifestyle Partners,Fairway Co.
+BRND-107,Hippor,Golf / Specialty Sports,Global Lifestyle Partners,Fairway Co.
+BRND-108,TaylorMight,Golf / Specialty Sports,Global Lifestyle Partners,Fairway Co.
+BRND-109,Tabaro,Golf / Specialty Sports,Global Lifestyle Partners,Fairway Co.
+BRND-110,Nicklaz,Golf / Specialty Sports,Global Lifestyle Partners,Fairway Co.
+BRND-111,Aluna Arch,Lifestyle & Home,Global Lifestyle Partners,LifeSphere
+BRND-112,Crabtree & Eden,Lifestyle & Home,Global Lifestyle Partners,LifeSphere
+BRND-113,DigiMax,Lifestyle & Home,Global Lifestyle Partners,LifeSphere
+BRND-114,DigiPlusX,Lifestyle & Home,Global Lifestyle Partners,LifeSphere
+BRND-115,Samvera,Lifestyle & Home,Global Lifestyle Partners,LifeSphere
+BRND-116,H2OVibe,Lifestyle & Home,Global Lifestyle Partners,LifeSphere
+BRND-117,KinoBooks,Lifestyle & Home,Global Lifestyle Partners,LifeSphere
+BRND-118,Traxa,Lifestyle & Home,Global Lifestyle Partners,LifeSphere
+BRND-119,Samsonex,Lifestyle & Home,Global Lifestyle Partners,LifeSphere
+BRND-120,AmeriTour,Lifestyle & Home,Global Lifestyle Partners,LifeSphere
+BRND-121,Travelio,Lifestyle & Home,Global Lifestyle Partners,LifeSphere
+BRND-122,Swisha,Lifestyle & Home,Global Lifestyle Partners,LifeSphere
+BRND-123,Zavana Home,Lifestyle & Home,Global Lifestyle Partners,LifeSphere

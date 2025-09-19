@@ -1,0 +1,101 @@
+customer_id,name,gender,age,city,region
+CUST-112048,"Sutan Cakrawangsa Marpaung, S.Psi",Male,21,Cirebon,West Java
+CUST-109267,"Ir. Zaenab Wahyudin, M.Kom.",Female,43,Denpasar,Bali
+CUST-77837,"Vega Uyainah, S.Kom",Female,59,Bekasi,West Java
+CUST-105027,Latika Saputra,Female,19,Padang,West Sumatra
+CUST-51663,Syahrini Yulianti,Female,44,Bengkulu City,Bengkulu
+CUST-06134,Candrakanta Hutapea,Male,33,Serang,Banten
+CUST-28825,"Kani Pratiwi, M.Pd",Female,69,Mamuju,West Sulawesi
+CUST-108172,"Jane Suwarno, M.TI.",Male,62,Depok,West Java
+CUST-15180,"Iriana Prabowo, M.Pd",Female,67,Bandar Lampung,Lampung
+CUST-101956,Dr. Lili Lazuardi,Female,22,Pekanbaru,Riau
+CUST-112453,Nova Lazuardi,Female,51,Yogyakarta,Special Region of Yogyakarta
+CUST-106810,Balapati Putra,Female,26,Sofifi,North Maluku
+CUST-20960,Marsito Rahimah,Male,40,Sidoarjo,East Java
+CUST-30538,Ir. Gilang Lestari,Female,NA,Bandung,West Java
+CUST-106078,"Wawan Wibowo, M.M.",Male,42,Denpasar,Bali
+CUST-58527,Lanang Nainggolan,Female,33,Bandar Lampung,Lampung
+CUST-105967,"dr. Perkasa Tamba, S.Ked",Male,64,Tangerang,Banten
+CUST-94517,"Margana Kurniawan, S.Sos",Female,52,Mamuju,West Sulawesi
+CUST-14403,Yunita Narpati,Male,52,Gorontalo City,Gorontalo
+CUST-21812,Zaenab Latupono,Male,35,Palangkaraya,Central Kalimantan
+CUST-110476,Victoria Saragih,female,61,surabaya,East Java
+CUST-09642,"Aurora Habibi, S.E.I",Female,61,Serang,Banten
+CUST-107816,Nilam Budiman,Female,60,Sidoarjo,East Java
+CUST-45404,Pangestu Yolanda,Male,21,BANJARMASIN,South Kalimantan
+CUST-09326,"Dr. Gilda Januar, M.Pd",Not Specified,41,Mataram,West Nusa Tenggara
+CUST-112049,Titi Yolanda,M,59,Surakarta,Central Java
+CUST-109830,Violet Irawan,Male,18,Semarang,Central Java
+CUST-109039,Kasiran Kusumo,Male,43,Jakarta,DKI Jakarta
+CUST-109175,Unjani Agustina,Male,55,Gorontalo City,Gorontalo
+CUST-09640,Dalima Simanjuntak,Male,48,Cirebon,West Java
+CUST-14426,Hendri Wasita,Female,46,Bogor,West Java
+CUST-111029,Malika Marpaung,female,47,Bogor,West Java
+CUST-85278,Keisha Prastuti,Male,32,Bengkulu City,Bengkulu
+CUST-96849,"Dr. Manah Riyanti, S.Gz",F,33,Jakarta,DKI Jakarta
+CUST-104093,Garda Nasyidah,Female,30,malang,East Java
+CUST-72820,"Puti Dewi Puspasari, S.Sos",Female,47,Jambi City,Jambi
+CUST-100986,Dodo Nababan,Male,34,Jambi City,Jambi
+CUST-110452,"R.A. Puspa Nashiruddin, M.TI.",male,70,Tangerang,Banten
+CUST-46435,Ciaobella Hariyah,Female,40,Yogyakarta,Special Region of Yogyakarta
+CUST-90077,"Putri Mandala, S.IP",Female,NA,Sidoarjo,East Java
+CUST-108174,"Drs. Salsabila Novitasari, S.IP",Male,43,Mamuju,West Sulawesi
+CUST-89709,"Dt. Estiono Hassanah, M.M.",Female,27,Semarang,Central Java
+CUST-109301,Rama Hastuti,Male,33,Serang,Banten
+CUST-65161,Ajiono Utami,Male,52,Depok,West Java
+CUST-62555,"dr. Nova Hidayat, S.T.",Female,67,Samarinda,East Kalimantan
+CUST-101584,Daliman Palastri,Male,NA,Pangkal Pinang,Bangka Belitung Islands
+CUST-112415,Hj. Zaenab Suartini,Male,48,PANGKAL PINANG,Bangka Belitung Islands
+CUST-13536,Jayeng Kusumo,Female,NA,Balikpapan,East Kalimantan
+CUST-07989,Rahayu Samosir,Male,69,Bogor,West Java
+CUST-06216,T. Jabal Damanik,Female,NA,Jambi City,Jambi
+CUST-39895,"Icha Iswahyudi, S.I.Kom",Female,20,Bandar Lampung,Lampung
+CUST-100686,Iriana Fujiati,Female,22,Tangerang,Banten
+CUST-53241,Drs. Ana Permata,Female,32,Manokwari,West Papua
+CUST-105358,"Manah Lailasari, S.Sos",Female,69,Pekanbaru,Riau
+CUST-52132,Jelita Mandala,Female,51,Malang,East Java
+CUST-64502,Diana Manullang,Female,20,Pangkal Pinang,Bangka Belitung Islands
+CUST-102208,"dr. Kala Hartati, S.Pd",Male,19,Bandung,West Java
+CUST-102378,Julia Zulaika,Female,NA,Bandung,West Java
+CUST-110106,Rama Mardhiyah,Male,66,Bogor,West Java
+CUST-106911,"Umi Handayani, S.Ked",Female,39,Semarang,Central Java
+CUST-110695,Latika Safitri,Male,42,Palembang,South Sumatra
+CUST-107448,Umi Puspasari,Male,31,tanjung pinang,Riau Islands
+CUST-101029,Irfan Kuswoyo,Male,20,Tanjung Selor,North Kalimantan
+CUST-104715,"R. Tirta Mangunsong, S.Farm",Male,58,JAKARTA,DKI Jakarta
+CUST-108011,"Dalima Tamba, S.Psi",Female,32,Yogyakarta,Special Region of Yogyakarta
+CUST-101386,Jefri Laksmiwati,Male,48,Surakarta,Central Java
+CUST-111338,R. Marsudi Wijaya,Male,58,Bengkulu City,Bengkulu
+CUST-109954,Puti Kamila Megantara,Male,NA,Semarang,Central Java
+CUST-107735,"Ikhsan Narpati, S.Gz",Male,37,Semarang,Central Java
+CUST-77009,"Ir. Suci Farida, S.E.I",Female,70,Yogyakarta,Special Region of Yogyakarta
+CUST-68293,Ira Gunawan,M,56,Bandar Lampung,Lampung
+CUST-83519,Jamalia Gunawan,Female,41,Semarang,Central Java
+CUST-104233,"Cut Rina Pudjiastuti, S.IP",Female,61,Merauke,South Papua
+CUST-43042,Oman Riyanti,Male,43,Sidoarjo,East Java
+CUST-26510,Simon Saputra,Female,21,Jakarta,DKI Jakarta
+CUST-27168,Jumari Yuniar,Female,70,Serang,Banten
+CUST-104044,Dr. Jarwadi Namaga,Female,20,Kendari,Southeast Sulawesi
+CUST-56219,Gasti Wibisono,Female,21,Semarang,Central Java
+CUST-33523,Nilam Latupono,Male,54,Samarinda,East Kalimantan
+CUST-108518,"R.A. Eka Anggraini, S.E.",Male,26,Bogor,West Java
+CUST-51656,Bakda Mulyani,Male,51,Jakarta,DKI Jakarta
+CUST-106183,Enteng Pranowo,Not Specified,59,Cirebon,West Java
+CUST-110666,Panca Pratiwi,M,19,Makassar,South Sulawesi
+CUST-94038,Zulaikha Iswahyudi,Male,62,Jayapura,Papua
+CUST-100985,Halima Namaga,Female,48,Bogor,West Java
+CUST-95246,Dt. Harsaya Safitri,Male,44,Surabaya,East Java
+CUST-106387,"drg. Almira Puspita, S.IP",Male,43,Surabaya,East Java
+CUST-29925,"Wani Januar, M.Farm",Female,59,Denpasar,Bali
+CUST-02986,"Ratih Mandala, M.Farm",Male,66,Surakarta,Central Java
+CUST-00041,"Unjani Maryati, S.Sos",Female,46,Sidoarjo,East Java
+CUST-29394,"R.A. Siska Nainggolan, S.Pt",Female,NA,Yogyakarta,Special Region of Yogyakarta
+CUST-57870,"Dr. Jati Yolanda, S.Kom",Female,30,Banda Aceh,Aceh
+CUST-100151,Najam Pertiwi,Male,58,Surabaya,East Java
+CUST-107281,Kambali Susanti,Female,63,Palu,Central Sulawesi
+CUST-105884,Genta Kusmawati,Female,54,Semarang,Central Java
+CUST-14183,Laksana Irawan,Male,50,Mataram,West Nusa Tenggara
+CUST-09097,Hesti Pudjiastuti,Female,54,Bogor,West Java
+CUST-104706,dr. Garda Prasetya,Male,69,Bekasi,West Java
+CUST-104685,Bagus Kusmawati,Not Specified,60,Cirebon,West Java
+CUST-59134,Dr. Syahrini Nuraini,Female,26,Serang,Banten
