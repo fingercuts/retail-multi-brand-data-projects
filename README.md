@@ -71,6 +71,15 @@ docs/               # Schema diagrams, lineage screenshots
 
 ---
 
+## 📐 Star Schema
+![Star Schema](docs/schema.png)
+
+---
+
+📖 [Data Dictionary](docs/data_dictionary.md)
+
+---
+
 ## 🛠️ Roadmap
 
 1. **Ingestion** (CSV → DuckDB + Parquet)  
