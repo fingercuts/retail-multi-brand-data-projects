@@ -1,4 +1,26 @@
-# Ignore heavy files, keep smaller ones
+# ---------------------------------------
+# Ignore large raw CSVs (too heavy for GitHub)
+# ---------------------------------------
 data/raw/sales_transactions.csv
 data/raw/customers.csv
+
+# Ignore large parquet staging files
 data/staging/sales.parquet
+
+# (Optional) If other parquet/csv > 50MB, list here:
+# data/staging/promotions.parquet
+# data/staging/inventory.parquet
+
+# ---------------------------------------
+# General housekeeping
+# ---------------------------------------
+# Virtual environment
+venv/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python cache
+__pycache__/
+*.pyc
