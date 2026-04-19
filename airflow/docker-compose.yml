@@ -1,0 +1,74 @@
+version: '3.8'
+
+x-airflow-common:
+  &airflow-common
+  build: .
+  environment:
+    &airflow-common-env
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+    AIRFLOW__CORE__FERNET_KEY: ''
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
+    AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+  volumes:
+    - .:/opt/airflow/dags
+    - ../scripts:/opt/airflow/scripts
+    - ../dbt_project:/opt/airflow/dbt_project
+    - ../data:/opt/airflow/data
+  depends_on:
+    - postgres
+
+services:
+  postgres:
+    image: postgres:13
+    container_name: retail_airflow_postgres
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    ports:
+      - "5433:5432" # Mapped to 5433 to avoid conflict with serving API postgres
+    volumes:
+      - airflow_pg_data:/var/lib/postgresql/data
+
+  airflow-init:
+    <<: *airflow-common
+    container_name: retail_airflow_init
+    command: version
+    environment:
+      <<: *airflow-common-env
+      _AIRFLOW_DB_UPGRADE: 'true'
+      _AIRFLOW_WWW_USER_CREATE: 'true'
+      _AIRFLOW_WWW_USER_USERNAME: admin
+      _AIRFLOW_WWW_USER_PASSWORD: admin
+
+  airflow-webserver:
+    <<: *airflow-common
+    container_name: retail_airflow_webserver
+    command: webserver
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    depends_on:
+      postgres:
+        condition: service_started
+      airflow-init:
+        condition: service_completed_successfully
+
+  airflow-scheduler:
+    <<: *airflow-common
+    container_name: retail_airflow_scheduler
+    command: scheduler
+    depends_on:
+      postgres:
+        condition: service_started
+      airflow-init:
+        condition: service_completed_successfully
+
+volumes:
+  airflow_pg_data:

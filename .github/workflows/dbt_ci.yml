@@ -1,0 +1,35 @@
+name: dbt CI
+
+on:
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  dbt_ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install dbt-duckdb pytest httpx
+          cd dbt_project && dbt deps
+
+      - name: Run Python Unit Tests
+        run: |
+          export PYTHONPATH=$(pwd)
+          pytest tests/ -v
+
+      - name: Run dbt build
+        run: |
+          cd dbt_project
+          dbt build --profiles-dir .
