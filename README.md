@@ -1,102 +1,108 @@
-# 🛒 Retail Multi-Brand Data Project
+# Retail Multi-Brand Data Project
 
-> “This project simulates the analytics challenges of a multi-brand retail holding company.  
-> From raw transactional extracts, I built an end-to-end data pipeline → (ingestion → transformation → orchestration → BI dashboard) to generate insights for business stakeholders.”
+<div align="center">
+  <img src="docs/assets/screenshot_1_executive_overview.png" width="49%">
+  <img src="docs/assets/screenshot_3_product_insights.png" width="49%">
+</div>
+<div align="center">
+  <img src="docs/assets/screenshot_4_customer_analytics.png" width="49%">
+  <img src="docs/assets/screenshot_5_promotion_analysis.png" width="49%">
+</div>
+<br>
 
-**Project Highlights**
-- Built full pipeline: raw data → DuckDB/dbt marts → BI dashboards.
-- Tools: Google Colab, PySpark, DuckDB, dbt, Airflow, Power BI.
-- Focus: Data engineering, analytics engineering, business intelligence, and storytelling.
+> This project simulates the analytics challenges of a multi-brand retail holding company.  
+> It covers the end-to-end data lifecycle: ingestion, transformation, orchestration, and BI dashboarding to generate actionable business insights.
+
+## Project Highlights
+- **End-to-End Pipeline**: Raw CSV data processed through a DuckDB/dbt warehouse.
+- **Data Contracts**: Schema enforcement using Pydantic during ingestion, including a Dead Letter Queue (DLQ) for failed records.
+- **Scalable Ingestion**: Support for standard Python batch, Spark for larger loads, and simulated micro-batches.
+- **Predictive Analytics**: 90-day sales forecasting using Facebook Prophet.
+- **Serving Layer**: A FastAPI layer that pulls from a PostgreSQL production database (Reverse ETL).
+- **Automation**: CI/CD via GitHub Actions, testing with Pytest, and SQL linting with SQLfluff.
+- **Monitoring**: Automated data quality reports based on dbt test results.
+- **IaC**: Terraform configurations representing an AWS deployment environment (S3, RDS, ECS).
 
 ---
 
-## 📌 Project Overview
-This project simulates the challenges of working with a **large, messy multi-subsidiary retail dataset**.  
-The goal is to showcase technical skills in:
-- Data ingestion & cleaning (PySpark, DuckDB)
-- Data modeling & transformations (dbt + DuckDB)
+## Project Overview
+This project targets the technical and organizational hurdles of consolidating data from multiple retail subsidiaries.
+
+### Data Strategy
+The repository manages the infrastructure and logic. The underlying data is synthetic, designed to mimic common retail messiness (missing values, inconsistent formats, and PII masking requirements). The pipeline is built to handle omnichannel transactions (Online + Offline) to reflect a modern retail environment.
+
+**Objectives:**
+- Data ingestion and cleaning (PySpark, DuckDB)
+- Star schema modeling (dbt + DuckDB)
 - Workflow orchestration (Airflow)
-- Visualization & insights (Power BI)
-- Business acumen & communication
-
-Deliverables:
-- GitHub repo (this one 🖐)
-- Interactive Power BI Dashboard
-- Analytics & insights presentation deck
+- Professional reporting and business intelligence
 
 ---
 
-## ⚙️ Tech Stack
-- **Python (pandas, numpy, pyarrow)** – preprocessing & Colab work
-- **PySpark** – ingestion & scalable cleaning
-- **DuckDB** – embedded analytical database
-- **dbt** – transformations, star schema modeling
-- **Airflow** – pipeline orchestration (simulated DAGs)
-- **Power BI** – dashboard visualization
+## Technical Stack
+- **Languages**: Python (Pandas, PyArrow), SQL
+- **Processing**: PySpark, DuckDB
+- **Modeling**: dbt
+- **Orchestration**: Apache Airflow (Dockerized)
+- **Database**: PostgreSQL (Serving Layer)
+- **API**: FastAPI
+- **Analytics**: Prophet (Forecasting), Streamlit (Dashboard)
+- **DevOps**: Docker, Terraform, GitHub Actions, Pytest
 
 ---
 
-## 🗂️ Repository Structure
+## Local Setup
+The project uses a **Makefile** to simplify environment management.
 
-<pre>
+1.  **Clone the repository**:
+    ```bash
+    git clone <repo-url>
+    cd retail-multi-brand-data-projects
+    ```
+
+2.  **Environment Setup**:
+    ```bash
+    make setup
+    ```
+
+3.  **Manual Setup (Optional)**:
+    If you don't have `make` installed, use the provided PowerShell script:
+    ```powershell
+    .\setup_env.ps1
+    ```
+
+---
+
+## Repository Structure
+
+```text
 data/
-├── raw/            # Raw CSV extracts (8 source files)
-├── staging/        # Cleaned Parquet files after ingestion
-└── marts/          # Analytics-ready tables (fact + dims from dbt)
+├── raw/            # Source CSV extracts
+├── staging/        # Processed Parquet files
+└── marts/          # Star schema tables (dbt output)
 
-notebooks/          # Colab notebooks (ingestion, EDA, analysis)
-dbt_project/        # dbt models (staging, intermediate, marts)
-airflow/            # Orchestration DAGs
-dashboards/         # Power BI dashboards, exports
-presentation/       # Insights deck
-docs/               # Schema diagrams, lineage screenshots
-</pre>
-
----
-
-🔄 Data Pipeline Architecture
-<pre> 
-  Raw CSV extracts 
-          ↓ 
-  [Ingestion Layer] -> PySpark + DuckDB (staging tables, Parquet export) 
-          ↓ 
-  [Transformation] -> dbt + DuckDB (star schema: Fact + Dimensions, lineage docs) 
-          ↓    
-  [Orchestration] -> Airflow DAGs (simulate daily/weekly refresh) 
-          ↓ 
-  [Analytics Layer] -> Power BI dashboards (KPIs, trends, promos, store insights) 
-          ↓ 
-  [Business Output] -> Insights deck for executives 
-</pre>
+dbt_project/        # dbt models and tests
+airflow/            # Dockerized Airflow DAGs and configs
+api/                # FastAPI application
+dashboard/          # Streamlit app and Power BI files
+scripts/            # Ingestion logic and Pydantic contracts
+terraform/          # Infrastructure as Code
+tests/              # Pytest suite
+```
 
 ---
 
-## 📐 Star Schema
-![Star Schema](docs/schema.png)
+## Data Pipeline Architecture
+1.  **Ingestion**: Python/Spark scripts load raw CSVs into DuckDB/Parquet with schema validation.
+2.  **Transformation**: dbt builds a Kimball Star Schema (Fact + Dimensions) and runs data quality tests.
+3.  **Orchestration**: Airflow DAGs manage the schedule and dependencies between tasks.
+4.  **Serving**: Clean data is synced to PostgreSQL and surfaced via a FastAPI REST API.
+5.  **Analytics**: Final insights are delivered via a Streamlit dashboard and predictive forecasts.
 
 ---
 
-📖 [Data Dictionary](docs/data_dictionary.md)
-
----
-
-## 🛠️ Roadmap
-
-1. **Ingestion** (CSV → DuckDB + Parquet)  
-2. **Data Modeling** (star schema design)  
-3. **Transformation** (dbt models + lineage)  
-4. **Orchestration** (Airflow DAG for pipeline flow)  
-5. **Analytics & BI** (Power BI dashboards)  
-6. **Insights & Storytelling** (presentation deck)  
-
----
-
-## 📊 Visuals (Coming Soon)
-- ✅ Data model (star schema diagram)  
-- ✅ dbt lineage graph  
-- ✅ Power BI dashboard screenshots  
-- ✅ Final insights deck  
-
-Stay tuned — updates as each phase completes! 🚀
-
----
+## Documentation
+- [**User Manual**](docs/user_manual.md): Detailed setup and operational guide.
+- [**Governance Guide**](docs/governance_guidelines.md): Data privacy and PII masking strategy.
+- [**API Documentation**](api/README.md): Endpoint reference for the FastAPI serving layer.
+- [**Insight Reference**](docs/insight_guidelines.md): Key metrics and analytical patterns.
