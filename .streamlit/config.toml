@@ -1,0 +1,10 @@
+[theme]
+# Retail Supply Chain Brand Colors
+primaryColor = "#2ECC71"     # Emerald Green (Positive Conversion)
+backgroundColor = "#121212"  # Deep Charcoal
+secondaryBackgroundColor = "#1E1E1E" # Lighter Charcoal for graphs
+textColor = "#F5F5F5"        # Crisp Off-White
+font = "sans serif"
+
+[layout]
+width = "wide"
