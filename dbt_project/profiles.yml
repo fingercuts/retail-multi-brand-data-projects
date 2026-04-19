@@ -1,0 +1,7 @@
+retail_analytics:
+  outputs:
+    dev:
+      type: duckdb
+      path: '../data/multibrand_retail.duckdb'
+      threads: 4
+  target: dev

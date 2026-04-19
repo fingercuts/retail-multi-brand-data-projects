@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: staging
+    schema: main
+    tables:
+      - name: raw_brands
+      - name: raw_customers
+      - name: raw_inventory
+      - name: raw_channels
+      - name: raw_products
+      - name: raw_promotions
+      - name: raw_sales
+      - name: raw_stores
