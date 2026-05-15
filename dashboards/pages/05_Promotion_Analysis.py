@@ -151,16 +151,27 @@ if check_db_state():
                 y='revenue', 
                 size='transactions',
                 color='brand', 
+                opacity=0.6,
                 color_discrete_sequence=PBI_PALETTE,
                 labels={'discount_pct': 'Discount %', 'revenue': f'Revenue ({currency})', 'brand': 'Brand'},
-                title=f"Revenue by Discount Level & Brand ({currency})"
+                title=f"Promotion Effectiveness: Revenue vs Discount % ({currency})"
             )
             
-            fig_discount.update_layout(pbi_chart_layout(height=500))
-            # Format Y-axis to be human readable
+            fig_discount.update_layout(pbi_chart_layout(height=600))
             fig_discount.update_yaxes(tickprefix=curr_sym, tickformat=".2s")
+            fig_discount.update_xaxes(tickformat=".0%")
+            
+            fig_discount.update_layout(
+                showlegend=True,
+                legend=dict(
+                    orientation="v", yanchor="top", y=1, xanchor="left", x=1.02,
+                    font=dict(size=10)
+                ),
+                margin=dict(r=150),
+                font=dict(color="#1E293B"),
+                paper_bgcolor='rgba(0,0,0,0)',
+                plot_bgcolor='rgba(0,0,0,0)'
+            )
 
-            fig_discount.update_yaxes(ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
-            fig_discount.update_layout(font=dict(color="#1E293B", size=14), paper_bgcolor='rgba(0,0,0,0)', bargap=0.2, plot_bgcolor='rgba(0,0,0,0)')
             with st.container(border=True):
                 st.plotly_chart(fig_discount, use_container_width=True, theme=None)
