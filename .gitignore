@@ -1,26 +1,63 @@
 # ---------------------------------------
-# Ignore large raw CSVs (too heavy for GitHub)
+# Data Sources & Databases
 # ---------------------------------------
-data/raw/sales_transactions.csv
-data/raw/customers.csv
+# Avoid checking in raw data (User plans to regenerate this)
+data/raw/*
+!data/raw/.gitkeep
+!data/raw/streaming_landing/.gitkeep
+!data/raw/streaming_landing/sample_stream_records.csv
+!data/dlq/.gitkeep
 
-# Ignore large parquet staging files
-data/staging/sales.parquet
+# Avoid checking in staging data
+data/staging/*
+!data/staging/.gitkeep
 
-# (Optional) If other parquet/csv > 50MB, list here:
-# data/staging/promotions.parquet
-# data/staging/inventory.parquet
+# Logs
+ingestion_details.log
+*.log
+
+*.duckdb
+*.duckdb.wal
+
+# ---------------------------------------
+# dbt Specific
+# ---------------------------------------
+dbt_project/target/
+dbt_project/dbt_packages/
+dbt_project/logs/
 
 # ---------------------------------------
 # General housekeeping
 # ---------------------------------------
-# Virtual environment
+.venv/
 venv/
+env/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
 
-# OS files
+# AI & Interview Docs (Excluded from Public Repo)
+docs/AI_TUTOR_CONTEXT.md
+docs/Technical_Interview_Guide.md
+
+# OS-specific files
 .DS_Store
 Thumbs.db
 
-# Python cache
-__pycache__/
-*.pyc
+# ---------------------------------------
+# Proprietary / Secret Generation Scripts
+# ---------------------------------------
+# Do not commit the simulated data generator as it contains 
+# proprietary logic from the original real-world project.
+scripts/generate_*.py
+scripts/mock_*.py
+data_generator.py
+
+# Ignore generated datasets and massive files
+*.csv
+*.zip
+
+# ---------------------------------------
+# AI Context / Private Docs
+# ---------------------------------------
+docs/AI_TUTOR_CONTEXT.md

@@ -1,9 +1,9 @@
 [theme]
-base="light"
-primaryColor="#0078D4"
-backgroundColor="#FAFAFA"
-secondaryBackgroundColor="#F2F2F2"
-textColor="#1F2937"
+base="dark"
+primaryColor="#F2C811"
+backgroundColor="#1B1B1B"
+secondaryBackgroundColor="#252525"
+textColor="#E8E8E8"
 font="sans serif"
 
 [runner]

@@ -5,7 +5,7 @@ SELECT
     city,
     region,
     subsidiary_company,
-    channel as store_type,
+    channel,
     opening_year,
     status
 FROM {{ ref('stg_stores') }}
