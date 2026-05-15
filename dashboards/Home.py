@@ -1,82 +1,160 @@
 import streamlit as st
 import os
-from utils_dashboard import inject_premium_css, check_db_state
+from utils_dashboard import inject_premium_css, check_db_state, render_pbi_footer, load_data, format_currency, PBI_COLORS, get_sidebar_filters, render_premium_header
 
 # --- PAGE SETUP ---
 st.set_page_config(
     page_title="OmniRetail Analytics",
-    page_icon="📊",
+    page_icon="⬡",
     layout="wide",
 )
 inject_premium_css()
+get_sidebar_filters()
 
 # --- HEADER SECTION ---
-st.markdown('<h1 class="main-header">OmniRetail Holdings</h1>', unsafe_allow_html=True)
-st.markdown("<p style='color: #2ECC71; font-size: 1.2rem; font-weight: 600; letter-spacing: 0.5px;'>Enterprise Multi-Brand Analytics Platform</p>", unsafe_allow_html=True)
+render_premium_header("OmniRetail Holdings", "Enterprise Multi-Brand Analytics Platform")
 
-st.markdown("---")
 
-# --- CORE LANDING CONTENT ---
-col_main, col_stats = st.columns([2, 1])
-
-with col_main:
-    st.markdown("""
-    ### Dashboard Overview
-    This platform provides a consolidated analytical view across all OmniRetail subsidiary brands. It integrates multi-source retail data into a unified star schema for performance tracking and executive reporting.
-    
-    #### Data Architecture
-    The underlying system utilizes a Medallion architecture:
-    1.  **Raw**: Source CSV extracts from brand-level ERPs.
-    2.  **Staging**: Standardized Parquet files with universal cleansing and PII masking.
-    3.  **Marts**: Analytical models built in **dbt** for unified reporting.
-    4.  **Serving**: This interactive interface and a parallel REST API.
-
-    #### Navigation
-    Use the **sidebar** to access specific analytical modules:
-    - **Executive Overview**: Corporate revenue metrics and growth velocity.
-    - **Business Operations**: Regional performance and store-level dynamics.
-    - **Product Insights**: Category distribution and SKU performance.
-    - **Customer Analytics**: Demographic and geographic segmentation.
-    - **Promotion Analysis**: ROI tracking for seasonal and brand-specific campaigns.
+# --- KPI STRIP ---
+if check_db_state():
+    kpi_data = load_data("""
+        SELECT 
+            COUNT(DISTINCT transaction_id) as transactions,
+            SUM(net_amount) as revenue,
+            COUNT(DISTINCT customer_id) as customers,
+            COUNT(DISTINCT product_id) as products
+        FROM fct_sales
     """)
+    
+    if not kpi_data.empty and kpi_data['revenue'][0] is not None:
+        k1, k2, k3, k4 = st.columns(4)
+        k1.metric("Total Revenue", format_currency(kpi_data['revenue'][0]))
+        k2.metric("Transactions", f"{int(kpi_data['transactions'][0]):,d}")
+        k3.metric("Customers", f"{int(kpi_data['customers'][0]):,d}")
+        k4.metric("Products", f"{int(kpi_data['products'][0]):,d}")
 
-with col_stats:
-    st.markdown("### System Status")
-    if check_db_state():
-        st.success("Analytical Database: Connected")
-        st.info("Pipeline State: Marts Available")
-    else:
-        st.error("Analytical Database: Disconnected")
-        st.warning("Please execute the ingestion and dbt-build sequences to populate the dashboard stores.")
+    st.markdown("")
 
-st.markdown("""
-<style>
-    .retail-card {
-        background: linear-gradient(135deg, #1E1E1E 0%, #172a23 100%);
-        padding: 20px;
-        border-radius: 8px;
-        border-top: 3px solid #2ECC71;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-        color: #F5F5F5;
-        transition: all 0.3s ease;
-    }
-    .retail-card:hover {
-        transform: scale(1.01);
-        box-shadow: 0 8px 15px rgba(46,204,113,0.2);
-    }
-</style>
-""", unsafe_allow_html=True)
+    # --- STATUS ROW ---
+    s1, s2, s3 = st.columns(3)
+    with s1:
+        st.markdown("""
+            <div class="pbi-status-connected">
+                <span class="pbi-status-dot"></span>
+                Database Connected
+            </div>
+        """, unsafe_allow_html=True)
+    with s2:
+        st.markdown("""
+            <div class="pbi-status-connected">
+                <span class="pbi-status-dot"></span>
+                Marts Available
+            </div>
+        """, unsafe_allow_html=True)
+    with s3:
+        st.markdown("""
+            <div class="pbi-status-connected" style="background:rgba(242,200,17,0.12); color:#F2C811;">
+                <span class="pbi-status-dot" style="background:#F2C811;"></span>
+                Live Refresh
+            </div>
+        """, unsafe_allow_html=True)
 
-st.markdown("---")
-st.markdown("### Decision Support Modules")
-c1, c2, c3 = st.columns(3)
+    st.markdown("")
 
-with c1:
-    st.markdown('<div class="retail-card"><strong>Revenue Trends</strong><br><br>Analyze growth patterns and performance anomalies across digital and physical channels.</div>', unsafe_allow_html=True)
-with c2:
-    st.markdown('<div class="retail-card"><strong>Brand Performance</strong><br><br>Evaluate brand-level contributions to the corporate bottom line and category health.</div>', unsafe_allow_html=True)
-with c3:
-    st.markdown('<div class="retail-card"><strong>Regional Insight</strong><br><br>Gis-mapping and regional segmentation to optimize logistics and territory management.</div>', unsafe_allow_html=True)
+    # --- MODULE CARDS ---
+    st.markdown('<div class="pbi-section-title">Analytics Modules</div>', unsafe_allow_html=True)
+    st.markdown("")
 
-st.sidebar.markdown("---")
-st.sidebar.caption("OmniRetail Analytics Platform")
+    c1, c2, c3 = st.columns(3)
+    with c1:
+        st.markdown("""
+            <div class="pbi-module-card">
+                <div>
+                    <div class="pbi-module-icon">📊</div>
+                    <div class="pbi-module-title">Executive Overview</div>
+                    <div class="pbi-module-desc">Corporate KPIs, revenue velocity, and brand portfolio performance at a glance.</div>
+                </div>
+            </div>
+        """, unsafe_allow_html=True)
+    with c2:
+        st.markdown("""
+            <div class="pbi-module-card">
+                <div>
+                    <div class="pbi-module-icon">🏢</div>
+                    <div class="pbi-module-title">Business Operations</div>
+                    <div class="pbi-module-desc">Channel mix, regional revenue distribution, and store-level leaderboards.</div>
+                </div>
+            </div>
+        """, unsafe_allow_html=True)
+    with c3:
+        st.markdown("""
+            <div class="pbi-module-card">
+                <div>
+                    <div class="pbi-module-icon">🛍️</div>
+                    <div class="pbi-module-title">Product Insights</div>
+                    <div class="pbi-module-desc">Category trends, SKU performance, price-volume correlation, and inventory health.</div>
+                </div>
+            </div>
+        """, unsafe_allow_html=True)
+
+    st.markdown("")
+    c4, c5, c6 = st.columns(3)
+    with c4:
+        st.markdown("""
+            <div class="pbi-module-card">
+                <div>
+                    <div class="pbi-module-icon">👥</div>
+                    <div class="pbi-module-title">Customer Analytics</div>
+                    <div class="pbi-module-desc">Demographic segmentation, geographic distribution, and VIP customer profiling.</div>
+                </div>
+            </div>
+        """, unsafe_allow_html=True)
+    with c5:
+        st.markdown("""
+            <div class="pbi-module-card">
+                <div>
+                    <div class="pbi-module-icon">🎯</div>
+                    <div class="pbi-module-title">Promotion Analysis</div>
+                    <div class="pbi-module-desc">Campaign effectiveness, discount impact, and promotional ROI tracking.</div>
+                </div>
+            </div>
+        """, unsafe_allow_html=True)
+    with c6:
+        st.markdown("""
+            <div class="pbi-module-card" style="border-style:dashed; opacity:0.5;">
+                <div>
+                    <div class="pbi-module-icon">🔮</div>
+                    <div class="pbi-module-title">Predictive (Coming Soon)</div>
+                    <div class="pbi-module-desc">ML-powered demand forecasting, churn prediction, and basket analysis.</div>
+                </div>
+            </div>
+        """, unsafe_allow_html=True)
+
+    st.markdown("")
+
+    # --- ARCHITECTURE SECTION ---
+    st.markdown('<div class="pbi-section-title">Data Architecture</div>', unsafe_allow_html=True)
+    st.markdown("")
+
+    a1, a2, a3, a4 = st.columns(4)
+    layers = [
+        ("a1", "🔵", "Raw", "Source CSV extracts from brand-level ERPs"),
+        ("a2", "🟡", "Staging", "Standardized Parquet with cleansing & PII masking"),
+        ("a3", "🟢", "Marts", "Star schema models built in dbt"),
+        ("a4", "🟣", "Serving", "Interactive dashboard & REST API"),
+    ]
+    for col, icon, name, desc in zip([a1, a2, a3, a4], *zip(*[(l[1], l[2], l[3]) for l in layers])):
+        with col:
+            st.markdown(f"""
+                <div style="background:#252525; border:1px solid #333; border-radius:8px; padding:24px 16px; text-align:center; height:180px; display:flex; flex-direction:column; justify-content:flex-start; align-items:center;">
+                    <div style="font-size:1.5rem; margin-bottom:12px;">{icon}</div>
+                    <div style="color:#FFF; font-weight:600; font-size:0.9rem; margin-bottom:8px;">{name}</div>
+                    <div style="color:#888; font-size:0.72rem; line-height:1.4;">{desc}</div>
+                </div>
+            """, unsafe_allow_html=True)
+
+else:
+    st.error("⚠️ Analytical database not connected. Please run the ingestion and dbt-build pipelines.")
+
+# --- FOOTER ---
+render_pbi_footer()
