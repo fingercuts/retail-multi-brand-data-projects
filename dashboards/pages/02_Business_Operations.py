@@ -3,7 +3,7 @@ import plotly.express as px
 import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from utils_dashboard import render_premium_header, load_data, inject_premium_css, check_db_state, get_sidebar_filters, format_currency, format_number
+from utils_dashboard import PBI_PALETTE, render_premium_header, load_data, inject_premium_css, check_db_state, get_sidebar_filters, format_currency, format_number
 
 # --- PAGE SETUP ---
 st.set_page_config(page_title="Business Operations | Retail Insights Pro", layout="wide")
@@ -33,7 +33,7 @@ if check_db_state():
             GROUP BY 1 ORDER BY 2 DESC
         """)
         if not channel_data.empty:
-            fig_chan = px.sunburst(channel_data, path=['channel'], values='revenue', color_discrete_sequence=px.colors.qualitative.Pastel)
+            fig_chan = px.sunburst(channel_data, path=['channel'], values='revenue', color_discrete_sequence=PBI_PALETTE)
             fig_chan.update_yaxes(ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
             fig_chan.update_layout(font=dict(color="#1E293B", size=14), height=450, paper_bgcolor='rgba(0,0,0,0)')
             with st.container(border=True):

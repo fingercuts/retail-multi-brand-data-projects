@@ -3,7 +3,7 @@ import plotly.express as px
 import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from utils_dashboard import render_premium_header, load_data, inject_premium_css, check_db_state, get_sidebar_filters, format_currency, format_number
+from utils_dashboard import render_premium_header, load_data, inject_premium_css, check_db_state, get_sidebar_filters, format_currency, PBI_PALETTE, format_number
 
 # --- PAGE SETUP ---
 st.set_page_config(page_title="Promotion Analysis | Retail Insights Pro", layout="wide")
@@ -123,26 +123,44 @@ if check_db_state():
         # --- DISCOUNT EFFECTIVENESS ---
         st.markdown("---")
         st.markdown("### 💰 Discount Level vs Revenue")
+        
+        # Determine currency rate
+        currency = st.session_state.get('selected_currency', 'USD')
+        rates = {"IDR": 1, "USD": 1/15500, "EUR": 1/16500}
+        symbols = {"IDR": "Rp", "USD": "$", "EUR": "€"}
+        curr_rate = rates.get(currency, 1)
+        curr_sym = symbols.get(currency, "$")
+
         discount_analysis = load_data(f"""
             SELECT 
-                CASE 
-                    WHEN pr.discount_pct < 10 THEN '0-10%'
-                    WHEN pr.discount_pct < 20 THEN '10-20%'
-                    WHEN pr.discount_pct < 30 THEN '20-30%'
-                    ELSE '30%+'
-                END as discount_range,
-                SUM(s.net_amount) as revenue,
-                COUNT(DISTINCT s.transaction_id) as transactions
+                pr.discount_pct,
+                SUM(s.net_amount) * {curr_rate} as revenue,
+                COUNT(DISTINCT s.transaction_id) as transactions,
+                p.brand_name as brand
             FROM fct_sales s
             JOIN dim_promotions pr ON s.promotion_id = pr.promotion_id
             JOIN dim_products p ON s.product_id = p.product_id
             LEFT JOIN dim_stores st ON s.store_id = st.store_id
             {filter_sql}
-            GROUP BY 1 ORDER BY 1
+            GROUP BY 1, 4
         """)
+        
         if not discount_analysis.empty:
-            fig_discount = px.scatter(discount_analysis, x='discount_range', y='revenue', size='transactions',
-                                     color='revenue', color_continuous_scale='Blues', labels={'brand_name': 'Brand', 'revenue': 'Revenue', 'category': 'Category', 'channel': 'Channel', 'region': 'Region', 'age_group': 'Age Group', 'customers': 'Customers', 'city': 'City', 'gender': 'Gender', 'promo_status': 'Promotion Status', 'discount_pct': 'Discount %', 'day': 'Date', 'price': 'Price', 'margin': 'Margin'})
+            fig_discount = px.scatter(
+                discount_analysis, 
+                x='discount_pct', 
+                y='revenue', 
+                size='transactions',
+                color='brand', 
+                color_discrete_sequence=PBI_PALETTE,
+                labels={'discount_pct': 'Discount %', 'revenue': f'Revenue ({currency})', 'brand': 'Brand'},
+                title=f"Revenue by Discount Level & Brand ({currency})"
+            )
+            
+            fig_discount.update_layout(pbi_chart_layout(height=500))
+            # Format Y-axis to be human readable
+            fig_discount.update_yaxes(tickprefix=curr_sym, tickformat=".2s")
+
             fig_discount.update_yaxes(ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
             fig_discount.update_layout(font=dict(color="#1E293B", size=14), paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
             with st.container(border=True):

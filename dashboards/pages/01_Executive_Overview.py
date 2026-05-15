@@ -3,7 +3,7 @@ import plotly.express as px
 import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from utils_dashboard import render_premium_header, load_data, inject_premium_css, check_db_state, get_sidebar_filters, format_currency, format_number
+from utils_dashboard import PBI_PALETTE, render_premium_header, load_data, inject_premium_css, check_db_state, get_sidebar_filters, format_currency, format_number
 
 # --- PAGE SETUP ---
 st.set_page_config(page_title="Executive Overview | Retail Insights Pro", layout="wide")
@@ -59,7 +59,7 @@ if check_db_state():
         """)
         if not trend_data.empty:
             fig_trend = px.line(trend_data, x='day', y='revenue', color='brand_name',
-                               line_shape='spline', color_discrete_sequence=px.colors.qualitative.Safe, labels={'brand_name': 'Brand', 'revenue': 'Revenue', 'category': 'Category', 'channel': 'Channel', 'region': 'Region', 'age_group': 'Age Group', 'customers': 'Customers', 'city': 'City', 'gender': 'Gender', 'promo_status': 'Promotion Status', 'discount_pct': 'Discount %', 'day': 'Date', 'price': 'Price', 'margin': 'Margin'})
+                               line_shape='spline', color_discrete_sequence=PBI_PALETTE, labels={'brand_name': 'Brand', 'revenue': 'Revenue', 'category': 'Category', 'channel': 'Channel', 'region': 'Region', 'age_group': 'Age Group', 'customers': 'Customers', 'city': 'City', 'gender': 'Gender', 'promo_status': 'Promotion Status', 'discount_pct': 'Discount %', 'day': 'Date', 'price': 'Price', 'margin': 'Margin'})
             fig_trend.update_yaxes(ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
             fig_trend.update_layout(font=dict(color="#1E293B", size=14), hovermode="x unified", plot_bgcolor='rgba(0,0,0,0)', 
                                    paper_bgcolor='rgba(0,0,0,0)', height=500, font_color="#94a3b8")
