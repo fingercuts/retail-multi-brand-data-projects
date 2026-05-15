@@ -3,7 +3,7 @@ import plotly.express as px
 import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from utils_dashboard import load_data, inject_premium_css, check_db_state, get_sidebar_filters
+from utils_dashboard import render_premium_header, load_data, inject_premium_css, check_db_state, get_sidebar_filters, format_currency, format_number
 
 # --- PAGE SETUP ---
 st.set_page_config(page_title="Promotion Analysis | Retail Insights Pro", layout="wide")
@@ -39,8 +39,8 @@ if check_db_state():
         m1, m2, m3, m4 = st.columns(4)
         m1.metric("Redemption Rate", f"{redemption_rate:.1f}%")
         m2.metric("Discount Impact", f"{discount_impact:.1f}%")
-        m3.metric("Total Discounts", f"Rp {promo_metrics['total_discounts'][0]:,.0f}")
-        m4.metric("Net Margin", f"Rp {promo_metrics['net_revenue'][0]:,.0f}")
+        m3.metric("Total Discounts", format_currency(promo_metrics['total_discounts'][0]))
+        m4.metric("Net Margin", format_currency(promo_metrics['net_revenue'][0]))
 
         # --- PROMO VS NON-PROMO ---
         st.markdown("---")
@@ -60,9 +60,11 @@ if check_db_state():
             """)
             if not promo_split.empty:
                 fig_split = px.pie(promo_split, values='revenue', names='promo_status', hole=0.5,
-                                  color_discrete_sequence=['#0078D4', '#E5E7EB'])
-                fig_split.update_layout(paper_bgcolor='rgba(0,0,0,0)')
-                st.plotly_chart(fig_split, use_container_width=True)
+                                  color_discrete_sequence=['#0078D4', '#E5E7EB'], labels={'brand_name': 'Brand', 'revenue': 'Revenue', 'category': 'Category', 'channel': 'Channel', 'region': 'Region', 'age_group': 'Age Group', 'customers': 'Customers', 'city': 'City', 'gender': 'Gender', 'promo_status': 'Promotion Status', 'discount_pct': 'Discount %', 'day': 'Date', 'price': 'Price', 'margin': 'Margin'})
+                fig_split.update_yaxes(ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
+                fig_split.update_layout(font=dict(color="#1E293B", size=14), paper_bgcolor='rgba(0,0,0,0)')
+                with st.container(border=True):
+                    st.plotly_chart(fig_split, use_container_width=True, theme=None)
 
         with c2:
             st.markdown("### 📊 Average Transaction Value")
@@ -78,9 +80,11 @@ if check_db_state():
             """)
             if not atv_comparison.empty:
                 fig_atv = px.bar(atv_comparison, x='promo_status', y='avg_transaction_value',
-                               color='promo_status', color_discrete_sequence=['#0078D4', '#6B7280'])
-                fig_atv.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', showlegend=False)
-                st.plotly_chart(fig_atv, use_container_width=True)
+                               color='promo_status', color_discrete_sequence=['#0078D4', '#6B7280'], labels={'brand_name': 'Brand', 'revenue': 'Revenue', 'category': 'Category', 'channel': 'Channel', 'region': 'Region', 'age_group': 'Age Group', 'customers': 'Customers', 'city': 'City', 'gender': 'Gender', 'promo_status': 'Promotion Status', 'discount_pct': 'Discount %', 'day': 'Date', 'price': 'Price', 'margin': 'Margin'})
+                fig_atv.update_yaxes(ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
+                fig_atv.update_layout(font=dict(color="#1E293B", size=14), paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', showlegend=False)
+                with st.container(border=True):
+                    st.plotly_chart(fig_atv, use_container_width=True, theme=None)
 
         # --- TOP PROMOTIONS ---
         st.markdown("---")
@@ -100,11 +104,18 @@ if check_db_state():
             GROUP BY 1, 2 ORDER BY 4 DESC LIMIT 10
         """)
         if not top_promos.empty:
-            st.dataframe(top_promos.style.format({
-                "discount_pct": "{:.1f}%",
-                "transactions": "{:,d}",
-                "revenue": "Rp {:.0f}",
-                "total_discount": "Rp {:.0f}"
+            display_promos = top_promos.rename(columns={
+                'promotion_name': 'Promotion Name',
+                'discount_pct': 'Discount %',
+                'transactions': 'Transactions',
+                'revenue': 'Revenue',
+                'total_discount': 'Total Discount'
+            })
+            st.dataframe(display_promos.style.format({
+                "Discount %": "{:.1f}%",
+                "Transactions": "{:,d}",
+                "Revenue": format_currency,
+                "Total Discount": format_currency
             }), use_container_width=True)
         else:
             st.info("No promotion data available for the selected filters.")
@@ -131,6 +142,8 @@ if check_db_state():
         """)
         if not discount_analysis.empty:
             fig_discount = px.scatter(discount_analysis, x='discount_range', y='revenue', size='transactions',
-                                     color='revenue', color_continuous_scale='Blues')
-            fig_discount.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
-            st.plotly_chart(fig_discount, use_container_width=True)
+                                     color='revenue', color_continuous_scale='Blues', labels={'brand_name': 'Brand', 'revenue': 'Revenue', 'category': 'Category', 'channel': 'Channel', 'region': 'Region', 'age_group': 'Age Group', 'customers': 'Customers', 'city': 'City', 'gender': 'Gender', 'promo_status': 'Promotion Status', 'discount_pct': 'Discount %', 'day': 'Date', 'price': 'Price', 'margin': 'Margin'})
+            fig_discount.update_yaxes(ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
+            fig_discount.update_layout(font=dict(color="#1E293B", size=14), paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
+            with st.container(border=True):
+                st.plotly_chart(fig_discount, use_container_width=True, theme=None)

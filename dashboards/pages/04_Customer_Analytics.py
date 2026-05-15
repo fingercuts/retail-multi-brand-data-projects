@@ -4,7 +4,7 @@ import plotly.graph_objects as go
 import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from utils_dashboard import load_data, inject_premium_css, check_db_state, get_sidebar_filters
+from utils_dashboard import render_premium_header, load_data, inject_premium_css, check_db_state, get_sidebar_filters, format_currency
 
 # --- PAGE SETUP ---
 st.set_page_config(page_title="Customer Analytics | Retail Insights Pro", layout="wide")
@@ -35,7 +35,7 @@ if check_db_state():
         st.markdown("---")
         m1, m2, m3 = st.columns(3)
         m1.metric("Total Customers", f"{int(customer_metrics['total_customers'][0]):,d}")
-        m2.metric("Revenue per Customer", f"Rp {customer_metrics['revenue_per_customer'][0]:,.0f}")
+        m2.metric("Revenue per Customer", format_currency(customer_metrics['revenue_per_customer'][0]))
         m3.metric("Average Age", f"{customer_metrics['avg_age'][0]:.1f} years")
 
         # --- DEMOGRAPHICS ---
@@ -64,9 +64,11 @@ if check_db_state():
             """)
             if not age_data.empty:
                 fig_age = px.bar(age_data, x='age_group', y='revenue', 
-                               color='customers', color_continuous_scale='Blues')
-                fig_age.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
-                st.plotly_chart(fig_age, use_container_width=True)
+                               color='customers', color_continuous_scale='Blues', labels={'brand_name': 'Brand', 'revenue': 'Revenue', 'category': 'Category', 'channel': 'Channel', 'region': 'Region', 'age_group': 'Age Group', 'customers': 'Customers', 'city': 'City', 'gender': 'Gender', 'promo_status': 'Promotion Status', 'discount_pct': 'Discount %', 'day': 'Date', 'price': 'Price', 'margin': 'Margin'})
+                fig_age.update_yaxes(ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
+                fig_age.update_layout(font=dict(color="#1E293B", size=14), paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
+                with st.container(border=True):
+                    st.plotly_chart(fig_age, use_container_width=True, theme=None)
 
         with c2:
             st.markdown("### ⚧️ Gender Split")
@@ -81,9 +83,11 @@ if check_db_state():
             """)
             if not gender_data.empty:
                 fig_gender = px.pie(gender_data, values='revenue', names='gender', hole=0.4,
-                                   color_discrete_sequence=['#0078D4', '#F59E0B'])
-                fig_gender.update_layout(paper_bgcolor='rgba(0,0,0,0)')
-                st.plotly_chart(fig_gender, use_container_width=True)
+                                   color_discrete_sequence=['#0078D4', '#F59E0B'], labels={'brand_name': 'Brand', 'revenue': 'Revenue', 'category': 'Category', 'channel': 'Channel', 'region': 'Region', 'age_group': 'Age Group', 'customers': 'Customers', 'city': 'City', 'gender': 'Gender', 'promo_status': 'Promotion Status', 'discount_pct': 'Discount %', 'day': 'Date', 'price': 'Price', 'margin': 'Margin'})
+                fig_gender.update_yaxes(ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
+                fig_gender.update_layout(font=dict(color="#1E293B", size=14), paper_bgcolor='rgba(0,0,0,0)')
+                with st.container(border=True):
+                    st.plotly_chart(fig_gender, use_container_width=True, theme=None)
 
         # --- GEOGRAPHIC ANALYSIS ---
         st.markdown("---")
@@ -99,9 +103,11 @@ if check_db_state():
         """)
         if not geo_data.empty:
             fig_geo = px.bar(geo_data, x='revenue', y='city', orientation='h',
-                           color='region', color_discrete_sequence=px.colors.qualitative.Set2)
-            fig_geo.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', height=500)
-            st.plotly_chart(fig_geo, use_container_width=True)
+                           color='region', color_discrete_sequence=px.colors.qualitative.Set2, labels={'brand_name': 'Brand', 'revenue': 'Revenue', 'category': 'Category', 'channel': 'Channel', 'region': 'Region', 'age_group': 'Age Group', 'customers': 'Customers', 'city': 'City', 'gender': 'Gender', 'promo_status': 'Promotion Status', 'discount_pct': 'Discount %', 'day': 'Date', 'price': 'Price', 'margin': 'Margin'})
+            fig_geo.update_yaxes(dtick=1, ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
+            fig_geo.update_layout(font=dict(color="#1E293B", size=14), paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', height=max(500, len(geo_data) * 25))
+            with st.container(border=True):
+                st.plotly_chart(fig_geo, use_container_width=True, theme=None)
 
         # --- VIP CUSTOMERS ---
         st.markdown("---")
@@ -116,4 +122,11 @@ if check_db_state():
             GROUP BY 1, 2, 3, 4 ORDER BY 5 DESC LIMIT 10
         """)
         if not vip_data.empty:
-            st.dataframe(vip_data.style.format({"total_revenue": "Rp {:.0f}"}), use_container_width=True)
+            display_vip = vip_data.rename(columns={
+                'customer_id': 'Customer ID',
+                'city': 'City',
+                'age': 'Age',
+                'gender': 'Gender',
+                'total_revenue': 'Total Revenue'
+            })
+            st.dataframe(display_vip.style.format({"Total Revenue": format_currency}), use_container_width=True)

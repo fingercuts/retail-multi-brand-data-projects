@@ -3,7 +3,7 @@ import plotly.express as px
 import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from utils_dashboard import load_data, inject_premium_css, check_db_state, get_sidebar_filters
+from utils_dashboard import render_premium_header, load_data, inject_premium_css, check_db_state, get_sidebar_filters, format_currency, format_number
 
 # --- PAGE SETUP ---
 st.set_page_config(page_title="Product Insights | Retail Insights Pro", layout="wide")
@@ -11,8 +11,7 @@ inject_premium_css()
 
 if check_db_state():
     # --- HEADER ---
-    st.markdown('<h1 class="main-header">Product Insights</h1>', unsafe_allow_html=True)
-    st.markdown("<p style='color: #94a3b8; font-size: 1.2rem;'>Category Performance, Product Mix & Pricing Dynamics</p>", unsafe_allow_html=True)
+    render_premium_header("Product & Inventory", "SKU Performance, Pricing Analysis & Inventory Health")
     
     # --- FILTERS ---
     filter_sql = get_sidebar_filters()
@@ -32,10 +31,14 @@ if check_db_state():
             GROUP BY 1 ORDER BY 2 DESC
         """)
         if not cat_data.empty:
-            fig_cat = px.bar(cat_data, x='revenue', y='category', orientation='h',
-                            color='revenue', color_continuous_scale='Purples', text_auto='.2s')
-            fig_cat.update_layout(showlegend=False, paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
-            st.plotly_chart(fig_cat, use_container_width=True)
+            fig_cat = px.bar(cat_data, x='revenue', y='category', orientation='h', text_auto='.2s', labels={'brand_name': 'Brand', 'revenue': 'Revenue', 'category': 'Category', 'channel': 'Channel', 'region': 'Region', 'age_group': 'Age Group', 'customers': 'Customers', 'city': 'City', 'gender': 'Gender', 'promo_status': 'Promotion Status', 'discount_pct': 'Discount %', 'day': 'Date', 'price': 'Price', 'margin': 'Margin'})
+            fig_cat.update_traces(marker_color='#A855F7')
+            fig_cat.update_yaxes(dtick=1, ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
+            fig_cat.update_layout(yaxis={'categoryorder':'total ascending'})
+            fig_cat.update_yaxes(dtick=1, ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
+            fig_cat.update_layout(font=dict(color="#1E293B", size=14), showlegend=False, paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', height=max(450, len(cat_data) * 25))
+            with st.container(border=True):
+                st.plotly_chart(fig_cat, use_container_width=True, theme=None)
         else:
             st.info("No category data.")
 
@@ -43,9 +46,11 @@ if check_db_state():
         st.markdown("### 📊 Category Portfolio Mix")
         if not cat_data.empty:
             fig_pie = px.pie(cat_data, values='revenue', names='category', hole=0.4,
-                            color_discrete_sequence=px.colors.qualitative.Pastel)
-            fig_pie.update_layout(paper_bgcolor='rgba(0,0,0,0)')
-            st.plotly_chart(fig_pie, use_container_width=True)
+                            color_discrete_sequence=px.colors.qualitative.Pastel, labels={'brand_name': 'Brand', 'revenue': 'Revenue', 'category': 'Category', 'channel': 'Channel', 'region': 'Region', 'age_group': 'Age Group', 'customers': 'Customers', 'city': 'City', 'gender': 'Gender', 'promo_status': 'Promotion Status', 'discount_pct': 'Discount %', 'day': 'Date', 'price': 'Price', 'margin': 'Margin'})
+            fig_pie.update_yaxes(ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
+            fig_pie.update_layout(font=dict(color="#1E293B", size=14), paper_bgcolor='rgba(0,0,0,0)')
+            with st.container(border=True):
+                st.plotly_chart(fig_pie, use_container_width=True, theme=None)
 
     # --- TOP PRODUCTS ---
     st.markdown("---")
@@ -64,7 +69,8 @@ if check_db_state():
         if not product_leaderboard.empty:
             # Format the dataframe for display
             formatted_df = product_leaderboard.copy()
-            formatted_df['revenue'] = formatted_df['revenue'].apply(lambda x: f"Rp {x:,.0f}")
+            formatted_df['revenue'] = formatted_df['revenue'].apply(format_currency)
+            formatted_df = formatted_df.rename(columns={'product_name': 'Product Name', 'category': 'Category', 'revenue': 'Revenue', 'units': 'Units Sold'})
             st.dataframe(formatted_df, use_container_width=True)
         else:
             st.info("No product data.")
@@ -82,9 +88,11 @@ if check_db_state():
         if not price_data.empty:
             fig_scatter = px.scatter(price_data, x="avg_price", y="total_units", color="category",
                                     hover_name="product_name", size="total_units",
-                                    log_x=True, size_max=40)
-            fig_scatter.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color="#1F2937")
-            st.plotly_chart(fig_scatter, use_container_width=True)
+                                    log_x=True, size_max=40, labels={'brand_name': 'Brand', 'revenue': 'Revenue', 'category': 'Category', 'channel': 'Channel', 'region': 'Region', 'age_group': 'Age Group', 'customers': 'Customers', 'city': 'City', 'gender': 'Gender', 'promo_status': 'Promotion Status', 'discount_pct': 'Discount %', 'day': 'Date', 'price': 'Price', 'margin': 'Margin'})
+            fig_scatter.update_yaxes(ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
+            fig_scatter.update_layout(font=dict(color="#1E293B", size=14), paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color="#1F2937")
+            with st.container(border=True):
+                st.plotly_chart(fig_scatter, use_container_width=True, theme=None)
         else:
             st.info("No pricing data.")
 
@@ -115,10 +123,15 @@ if check_db_state():
     """)
     
     if not inventory_data.empty:
-        st.dataframe(inventory_data.style.format({
-            "stock_on_hand": "{:.0f}",
-            "reorder_level": "{:.0f}",
-            "units_sold_30d": "{:.0f}"
+        display_inventory = inventory_data.rename(columns={
+            'product_name': 'Product Name', 'category': 'Category', 
+            'stock_on_hand': 'Stock on Hand', 'reorder_level': 'Reorder Level', 
+            'units_sold_30d': 'Units Sold 30d', 'status': 'Status'
+        })
+        st.dataframe(display_inventory.style.format({
+            "Stock on Hand": "{:.0f}",
+            "Reorder Level": "{:.0f}",
+            "Units Sold 30d": "{:.0f}"
         }), use_container_width=True)
     else:
         st.success("✅ All inventory levels are healthy!")
