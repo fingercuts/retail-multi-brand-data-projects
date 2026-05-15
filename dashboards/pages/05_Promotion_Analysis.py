@@ -81,7 +81,7 @@ if check_db_state():
                 fig_atv = px.bar(atv_comparison, x='promo_status', y='avg_transaction_value',
                                color='promo_status', color_discrete_sequence=['#0078D4', '#6B7280'], labels={'brand_name': 'Brand', 'revenue': 'Revenue', 'category': 'Category', 'channel': 'Channel', 'region': 'Region', 'age_group': 'Age Group', 'customers': 'Customers', 'city': 'City', 'gender': 'Gender', 'promo_status': 'Promotion Status', 'discount_pct': 'Discount %', 'day': 'Date', 'price': 'Price', 'margin': 'Margin'})
                 fig_atv.update_yaxes(ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
-                fig_atv.update_layout(font=dict(color="#1E293B", size=14), paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', showlegend=False)
+                fig_atv.update_layout(font=dict(color="#1E293B", size=14), paper_bgcolor='rgba(0,0,0,0)', bargap=0.2, plot_bgcolor='rgba(0,0,0,0)', showlegend=False)
                 with st.container(border=True):
                     st.plotly_chart(fig_atv, use_container_width=True, theme=None)
 
@@ -161,6 +161,6 @@ if check_db_state():
             fig_discount.update_yaxes(tickprefix=curr_sym, tickformat=".2s")
 
             fig_discount.update_yaxes(ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
-            fig_discount.update_layout(font=dict(color="#1E293B", size=14), paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
+            fig_discount.update_layout(font=dict(color="#1E293B", size=14), paper_bgcolor='rgba(0,0,0,0)', bargap=0.2, plot_bgcolor='rgba(0,0,0,0)')
             with st.container(border=True):
                 st.plotly_chart(fig_discount, use_container_width=True, theme=None)

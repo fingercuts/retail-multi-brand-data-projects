@@ -62,7 +62,7 @@ if check_db_state():
                                line_shape='spline', color_discrete_sequence=PBI_PALETTE, labels={'brand_name': 'Brand', 'revenue': 'Revenue', 'category': 'Category', 'channel': 'Channel', 'region': 'Region', 'age_group': 'Age Group', 'customers': 'Customers', 'city': 'City', 'gender': 'Gender', 'promo_status': 'Promotion Status', 'discount_pct': 'Discount %', 'day': 'Date', 'price': 'Price', 'margin': 'Margin'})
             fig_trend.update_yaxes(ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
             fig_trend.update_layout(font=dict(color="#1E293B", size=14), hovermode="x unified", plot_bgcolor='rgba(0,0,0,0)', 
-                                   paper_bgcolor='rgba(0,0,0,0)', height=500, font_color="#94a3b8")
+                                   paper_bgcolor='rgba(0,0,0,0)', bargap=0.2, height=500, font_color="#94a3b8")
             with st.container(border=True):
                 st.plotly_chart(fig_trend, use_container_width=True, theme=None)
         else:
@@ -82,9 +82,9 @@ if check_db_state():
         if not brand_data.empty:
             fig_brand = px.bar(brand_data, x='revenue', y='brand_name', orientation='h', text_auto='.2s', labels={'brand_name': 'Brand', 'revenue': 'Revenue', 'category': 'Category', 'channel': 'Channel', 'region': 'Region', 'age_group': 'Age Group', 'customers': 'Customers', 'city': 'City', 'gender': 'Gender', 'promo_status': 'Promotion Status', 'discount_pct': 'Discount %', 'day': 'Date', 'price': 'Price', 'margin': 'Margin'})
             fig_brand.update_traces(marker_color='#118DFF')
-            fig_brand.update_yaxes(dtick=1, ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
+            fig_brand.update_yaxes(type='category', dtick=1, ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
             fig_brand.update_layout(yaxis={'categoryorder':'total ascending'})
-            fig_brand.update_yaxes(dtick=1, ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
-            fig_brand.update_layout(font=dict(color="#1E293B", size=14), showlegend=False, paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', height=max(450, len(brand_data) * 25))
+            fig_brand.update_yaxes(type='category', dtick=1, ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
+            fig_brand.update_layout(font=dict(color="#1E293B", size=14), showlegend=False, paper_bgcolor='rgba(0,0,0,0)', bargap=0.2, plot_bgcolor='rgba(0,0,0,0)', height=max(450, len(brand_data) * 45))
             with st.container(border=True):
                 st.plotly_chart(fig_brand, use_container_width=True, theme=None)

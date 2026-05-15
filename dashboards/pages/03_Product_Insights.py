@@ -33,10 +33,10 @@ if check_db_state():
         if not cat_data.empty:
             fig_cat = px.bar(cat_data, x='revenue', y='category', orientation='h', text_auto='.2s', labels={'brand_name': 'Brand', 'revenue': 'Revenue', 'category': 'Category', 'channel': 'Channel', 'region': 'Region', 'age_group': 'Age Group', 'customers': 'Customers', 'city': 'City', 'gender': 'Gender', 'promo_status': 'Promotion Status', 'discount_pct': 'Discount %', 'day': 'Date', 'price': 'Price', 'margin': 'Margin'})
             fig_cat.update_traces(marker_color='#A855F7')
-            fig_cat.update_yaxes(dtick=1, ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
+            fig_cat.update_yaxes(type='category', dtick=1, ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
             fig_cat.update_layout(yaxis={'categoryorder':'total ascending'})
-            fig_cat.update_yaxes(dtick=1, ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
-            fig_cat.update_layout(font=dict(color="#1E293B", size=14), showlegend=False, paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', height=max(450, len(cat_data) * 25))
+            fig_cat.update_yaxes(type='category', dtick=1, ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
+            fig_cat.update_layout(font=dict(color="#1E293B", size=14), showlegend=False, paper_bgcolor='rgba(0,0,0,0)', bargap=0.2, plot_bgcolor='rgba(0,0,0,0)', height=max(450, len(cat_data) * 45))
             with st.container(border=True):
                 st.plotly_chart(fig_cat, use_container_width=True, theme=None)
         else:
@@ -90,7 +90,7 @@ if check_db_state():
                                     hover_name="product_name", size="total_units",
                                     log_x=True, size_max=40, labels={'brand_name': 'Brand', 'revenue': 'Revenue', 'category': 'Category', 'channel': 'Channel', 'region': 'Region', 'age_group': 'Age Group', 'customers': 'Customers', 'city': 'City', 'gender': 'Gender', 'promo_status': 'Promotion Status', 'discount_pct': 'Discount %', 'day': 'Date', 'price': 'Price', 'margin': 'Margin'})
             fig_scatter.update_yaxes(ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
-            fig_scatter.update_layout(font=dict(color="#1E293B", size=14), paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color="#1F2937")
+            fig_scatter.update_layout(font=dict(color="#1E293B", size=14), paper_bgcolor='rgba(0,0,0,0)', bargap=0.2, plot_bgcolor='rgba(0,0,0,0)', font_color="#1F2937")
             with st.container(border=True):
                 st.plotly_chart(fig_scatter, use_container_width=True, theme=None)
         else:

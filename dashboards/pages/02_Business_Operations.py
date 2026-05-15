@@ -54,10 +54,10 @@ if check_db_state():
         if not region_data.empty:
             fig_reg = px.bar(region_data, x='revenue', y='region', orientation='h', labels={'brand_name': 'Brand', 'revenue': 'Revenue', 'category': 'Category', 'channel': 'Channel', 'region': 'Region', 'age_group': 'Age Group', 'customers': 'Customers', 'city': 'City', 'gender': 'Gender', 'promo_status': 'Promotion Status', 'discount_pct': 'Discount %', 'day': 'Date', 'price': 'Price', 'margin': 'Margin'})
             fig_reg.update_traces(marker_color='#12B5CB')
-            fig_reg.update_yaxes(dtick=1, ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
+            fig_reg.update_yaxes(type='category', dtick=1, ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
             fig_reg.update_layout(yaxis={'categoryorder':'total ascending'})
-            fig_reg.update_yaxes(dtick=1, ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
-            fig_reg.update_layout(font=dict(color="#1E293B", size=14), height=max(450, len(region_data) * 25), paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', showlegend=False)
+            fig_reg.update_yaxes(type='category', dtick=1, ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
+            fig_reg.update_layout(font=dict(color="#1E293B", size=14), height=max(450, len(region_data) * 45), paper_bgcolor='rgba(0,0,0,0)', bargap=0.2, plot_bgcolor='rgba(0,0,0,0)', showlegend=False)
             with st.container(border=True):
                 st.plotly_chart(fig_reg, use_container_width=True, theme=None)
         else:

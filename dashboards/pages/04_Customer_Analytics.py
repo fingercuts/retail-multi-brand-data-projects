@@ -103,8 +103,14 @@ if check_db_state():
         if not geo_data.empty:
             fig_geo = px.bar(geo_data, x='revenue', y='city', orientation='h',
                            color='region', color_discrete_sequence=PBI_PALETTE, labels={'brand_name': 'Brand', 'revenue': 'Revenue', 'category': 'Category', 'channel': 'Channel', 'region': 'Region', 'age_group': 'Age Group', 'customers': 'Customers', 'city': 'City', 'gender': 'Gender', 'promo_status': 'Promotion Status', 'discount_pct': 'Discount %', 'day': 'Date', 'price': 'Price', 'margin': 'Margin'})
-            fig_geo.update_yaxes(dtick=1, ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
-            fig_geo.update_layout(font=dict(color="#1E293B", size=14), paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', height=max(500, len(geo_data) * 25))
+            fig_geo.update_yaxes(type='category', dtick=1, ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
+            fig_geo.update_layout(
+                font=dict(color="#1E293B", size=14), 
+                paper_bgcolor='rgba(0,0,0,0)', 
+                plot_bgcolor='rgba(0,0,0,0)', 
+                height=max(500, len(geo_data) * 45), # Increased multiplier for better spacing
+                bargap=0.2 # Standard gap to ensure bars are substantial
+            )
             with st.container(border=True):
                 st.plotly_chart(fig_geo, use_container_width=True, theme=None)
 
