@@ -4,7 +4,7 @@ import plotly.graph_objects as go
 import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from utils_dashboard import PBI_PALETTE, render_premium_header, load_data, inject_premium_css, check_db_state, get_sidebar_filters, format_currency
+from utils_dashboard import render_premium_header, load_data, inject_premium_css, check_db_state, get_sidebar_filters, format_currency, PBI_PALETTE, pbi_chart_layout, format_number
 
 # --- PAGE SETUP ---
 st.set_page_config(page_title="Customer Analytics | Retail Insights Pro", layout="wide")
@@ -12,8 +12,7 @@ inject_premium_css()
 
 if check_db_state():
     # --- HEADER ---
-    st.markdown('<h1 class="main-header">Customer Analytics</h1>', unsafe_allow_html=True)
-    st.markdown("<p style='color: #6B7280; font-size: 1.2rem;'>Demographics, Geography & Customer Lifetime Value</p>", unsafe_allow_html=True)
+    render_premium_header("Customer Intelligence", "Demographic Segmentation & Geographic Distribution")
     
     # --- FILTERS ---
     filter_sql = get_sidebar_filters()
@@ -103,7 +102,7 @@ if check_db_state():
         """)
         if not geo_data.empty:
             fig_geo = px.bar(geo_data, x='revenue', y='city', orientation='h',
-                           color='region', color_discrete_sequence=PBI_PALETTE2, labels={'brand_name': 'Brand', 'revenue': 'Revenue', 'category': 'Category', 'channel': 'Channel', 'region': 'Region', 'age_group': 'Age Group', 'customers': 'Customers', 'city': 'City', 'gender': 'Gender', 'promo_status': 'Promotion Status', 'discount_pct': 'Discount %', 'day': 'Date', 'price': 'Price', 'margin': 'Margin'})
+                           color='region', color_discrete_sequence=PBI_PALETTE, labels={'brand_name': 'Brand', 'revenue': 'Revenue', 'category': 'Category', 'channel': 'Channel', 'region': 'Region', 'age_group': 'Age Group', 'customers': 'Customers', 'city': 'City', 'gender': 'Gender', 'promo_status': 'Promotion Status', 'discount_pct': 'Discount %', 'day': 'Date', 'price': 'Price', 'margin': 'Margin'})
             fig_geo.update_yaxes(dtick=1, ticksuffix="  ", title="", automargin=True, tickfont=dict(size=14))
             fig_geo.update_layout(font=dict(color="#1E293B", size=14), paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', height=max(500, len(geo_data) * 25))
             with st.container(border=True):

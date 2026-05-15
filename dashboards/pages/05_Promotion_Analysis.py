@@ -3,7 +3,7 @@ import plotly.express as px
 import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from utils_dashboard import render_premium_header, load_data, inject_premium_css, check_db_state, get_sidebar_filters, format_currency, PBI_PALETTE, format_number
+from utils_dashboard import render_premium_header, load_data, inject_premium_css, check_db_state, get_sidebar_filters, format_currency, PBI_PALETTE, pbi_chart_layout, format_number
 
 # --- PAGE SETUP ---
 st.set_page_config(page_title="Promotion Analysis | Retail Insights Pro", layout="wide")
@@ -11,8 +11,7 @@ inject_premium_css()
 
 if check_db_state():
     # --- HEADER ---
-    st.markdown('<h1 class="main-header">Promotion Analysis</h1>', unsafe_allow_html=True)
-    st.markdown("<p style='color: #6B7280; font-size: 1.2rem;'>Campaign Effectiveness & Discount Impact</p>", unsafe_allow_html=True)
+    render_premium_header("Promotion & Marketing", "Campaign Effectiveness & Discount Impact Analysis")
     
     # --- FILTERS ---
     filter_sql = get_sidebar_filters()

@@ -3,7 +3,7 @@ import plotly.express as px
 import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from utils_dashboard import PBI_PALETTE, render_premium_header, load_data, inject_premium_css, check_db_state, get_sidebar_filters, format_currency, format_number
+from utils_dashboard import render_premium_header, load_data, inject_premium_css, check_db_state, get_sidebar_filters, format_currency, PBI_PALETTE, pbi_chart_layout, format_number
 
 # --- PAGE SETUP ---
 st.set_page_config(page_title="Executive Overview | Retail Insights Pro", layout="wide")
